@@ -1,0 +1,193 @@
+@at-root {
+	:root {
+		--widget-info-block-item-title-color                : var(--gray-900);
+
+		--widget-info-block-item-description-color          : var(--gray-600);
+		--widget-info-block-item-description-margin-mobile  : 6px 0 0;
+		--widget-info-block-item-description-margin-tablet  : 8px 0 0;
+		--widget-info-block-item-description-margin-desktop : 8px 0 0;
+
+		--widget-info-block-item-link-margin-mobile         : 6px 0 0;
+		--widget-info-block-item-link-margin-tablet         : 8px 0 0;
+		--widget-info-block-item-link-margin-desktop        : 8px 0 0;
+
+		--widget-info-block-item-link-image-default-mobile  : 0 0 14px;
+		--widget-info-block-item-link-image-default-tablet  : 0 0 16px;
+		--widget-info-block-item-link-image-default-desktop : 0 0 20px;
+		--widget-info-block-item-link-image-default-color   : var(--primary-600);
+
+		--widget-info-block-item-link-image-gap-mobile      : 12px;
+		--widget-info-block-item-link-image-gap-tablet      : 12px;
+		--widget-info-block-item-link-image-gap-desktop     : 16px;
+
+		--widget-info-block-item-card-padding-mobile        : 20px;
+		--widget-info-block-item-card-padding-tablet        : 24px;
+		--widget-info-block-item-card-padding-desktop       : 24px;
+		--widget-info-block-item-card-radius                : var(--border-radius);
+		--widget-info-block-item-card-background            : var(--gray-50);
+		--widget-info-block-item-card-size                  : 290px;
+
+		--widget-info-block-item-card-icon-size-mobile      : 40px;
+		--widget-info-block-item-card-icon-size-tablet      : 44px;
+		--widget-info-block-item-card-icon-size-desktop     : 48px;
+		--widget-info-block-item-card-icon-radius           : var(--border-radius);
+		--widget-info-block-item-card-icon-background       : var(--primary-600);
+		--widget-info-block-item-card-icon-color            : var(--base-white);
+	}
+}
+
+.widget-info-block-item {
+	&--algin-left {
+		text-align : left;
+	}
+
+	&--algin-center {
+		text-align : center;
+	}
+
+	&--algin-right {
+		text-align : right;
+	}
+
+	&--style-block {
+		@media screen and (min-width : $break-table) {
+			display         : flex;
+			align-items     : flex-start;
+			flex-flow       : row nowrap;
+			justify-content : flex-start;
+			gap             : var(--widget-info-block-item-link-image-gap-tablet);
+		}
+		@media screen and (min-width : $break-desktop) {
+			gap : var(--widget-info-block-item-link-image-gap-desktop);
+		}
+	}
+
+	&--style-card {
+		display         : flex;
+		align-items     : stretch;
+		flex-flow       : column nowrap;
+		justify-content : flex-start;
+		box-sizing      : border-box;
+		min-height      : var(--widget-info-block-item-card-size);
+		padding         : var(--widget-info-block-item-card-padding-mobile);
+		border-radius   : var(--widget-info-block-item-card-radius);
+		background      : var(--widget-info-block-item-card-background);
+		@media screen and (min-width : $break-table) {
+			padding : var(--widget-info-block-item-card-padding-tablet);
+		}
+		@media screen and (min-width : $break-desktop) {
+			padding : var(--widget-info-block-item-card-padding-desktop);
+		}
+	}
+}
+
+.widget-info-block-item__image {
+	flex   : 0 0 auto;
+	margin : var(--widget-info-block-item-link-image-default-mobile);
+	@media screen and (min-width : $break-table) {
+		margin : var(--widget-info-block-item-link-image-default-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--widget-info-block-item-link-image-default-desktop);
+	}
+
+	.widget-info-block-item--algin-right & {
+		order : 5;
+	}
+
+	&--style-card {
+		display         : flex;
+		align-items     : center;
+		flex-flow       : row nowrap;
+		justify-content : center;
+		margin          : 0 0 auto;
+		padding         : var(--widget-info-block-item-card-padding-mobile);
+		color           : var(--widget-info-block-item-card-icon-color);
+		border-radius   : var(--widget-info-block-item-card-icon-radius);
+		background      : var(--widget-info-block-item-card-icon-background);
+		@media screen and (min-width : $break-table) {
+			padding : var(--widget-info-block-item-card-padding-tablet);
+		}
+		@media screen and (min-width : $break-desktop) {
+			width  : var(--widget-info-block-item-card-icon-size-desktop);
+			height : var(--widget-info-block-item-card-icon-size-desktop);
+		}
+	}
+}
+
+.widget-info-block-item__icon:not(.widget-info-block-item__icon--style-card) {
+	display         : inline-flex;
+	align-items     : center;
+	flex-flow       : column nowrap;
+	justify-content : center;
+	width           : 48px;
+	height          : 48px;
+	padding         : 4px;
+	vertical-align  : top;
+	color           : var(--widget-info-block-item-link-image-default-color);
+	border          : 8px solid var(--primary-50);
+	border-radius   : 50%;
+	background      : var(--primary-100);
+
+	img {
+		max-width      : 100%;
+		max-height     : 100%;
+		vertical-align : top;
+	}
+}
+
+.widget-info-block-item__icon {
+	> span {
+		display : block;
+	}
+}
+
+.widget-info-block-item__main {
+	flex : 1 1 auto;
+
+	.widget-info-block-item--algin-right & {
+		order : 1;
+	}
+
+	&--style-card:not(:first-child) {
+		flex        : none;
+		margin-top  : auto;
+		padding-top : 24px;
+	}
+}
+
+.widget-info-block-item__title {
+	margin : 0;
+	@include text-md-semibold;
+	color  : var(--widget-info-block-item-title-color);
+	@media screen and (min-width : $break-table) {
+		@include text-lg-semibold;
+	}
+	@media screen and (min-width : $break-desktop) {
+		@include text-xl-semibold;
+	}
+}
+
+.widget-info-block-item__description {
+	@include text-sm-normal;
+	margin : var(--widget-info-block-item-description-margin-mobile);
+	color  : var(--widget-info-block-item-description-color);
+	@media screen and (min-width : $break-table) {
+		@include text-md-normal;
+		margin : var(--widget-info-block-item-description-margin-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--widget-info-block-item-description-margin-desktop);
+	}
+}
+
+
+.widget-info-block-item__link {
+	margin : var(--widget-info-block-item-link-margin-mobile);
+	@media screen and (min-width : $break-table) {
+		margin : var(--widget-info-block-item-link-margin-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--widget-info-block-item-link-margin-desktop);
+	}
+}

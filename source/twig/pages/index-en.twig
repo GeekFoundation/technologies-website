@@ -1,0 +1,10 @@
+{% extends "../template/layout-en.twig" %}
+{% set menuHome = true %}
+{% block title %}Main{% endblock %}
+{% block page %}
+    {% include '../partial/hero.twig' %}
+    {% include '../partial/about.twig' %}
+    {% include '../partial/offer.twig' %}
+    {% include '../partial/choose.twig' %}
+    {% include '../partial/feedback.twig' %}
+{% endblock %}

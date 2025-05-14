@@ -1,0 +1,46 @@
+
+.footer__line {
+	display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+    justify-content: center;
+    @include text-md-regular;
+    text-align: center;
+    padding: 24px 0;
+
+    @media screen and (min-width : $break-table) {
+        justify-content : space-between;
+        align-items     : center;
+        flex-direction  : row;
+        padding: 46px 0 32px;
+    }
+    @media screen and (min-width : $break-desktop) {
+        padding: 40px 0;
+    }
+}
+
+.footer__list {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+
+    li {
+        list-style: none;
+    }
+}
+
+.footer__link {
+    color: var(--brand-500);
+    transition: color 0.35s ease;
+
+    &:hover {
+        color: var(--brand-900);
+    }
+}
+
+.footer__coop {
+    color: var(--gray-900);
+    opacity: 0.5;
+}

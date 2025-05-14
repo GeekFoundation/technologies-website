@@ -1,0 +1,13 @@
+.swiper-lazy-preloader {
+	position         : absolute;
+	z-index          : 10;
+	top              : 50%;
+	left             : 50%;
+	box-sizing       : border-box;
+	width            : 48px;
+	height           : 48px;
+	margin-top       : -24px;
+	margin-left      : -24px;
+	transform-origin : 50%;
+	background       : url("../images/icons/ajax-loader.svg") no-repeat 50% 50%;
+}

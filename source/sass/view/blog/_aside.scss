@@ -1,0 +1,12 @@
+.blog-aside {
+	display    : none;
+	visibility : hidden;
+	@media screen and (min-width : $break-desktop) {
+		display    : block;
+		visibility : visible;
+	}
+}
+
+.blog-aside__title {
+
+}

@@ -1,0 +1,11 @@
+.woocommerce-message {
+	@extend .box-alert;
+
+	&[role="alert"] {
+
+	}
+
+	.woocommerce-product__topgroup & {
+		margin-bottom : 15px;
+	}
+}

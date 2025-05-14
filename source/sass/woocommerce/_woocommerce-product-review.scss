@@ -1,0 +1,183 @@
+@at-root {
+	:root {
+		--woocommerce-product-review-margin-mobile              : 24px 0 0;
+		--woocommerce-product-review-margin-tablet              : 32px 0 0;
+		--woocommerce-product-review-margin-desktop             : 32px 0 0;
+
+		--woocommerce-product-review-list-gap-mobile            : 30px 0;
+		--woocommerce-product-review-list-gap-tablet            : 45px 0;
+		--woocommerce-product-review-list-gap-desktop           : 80px 0;
+
+		--woocommerce-product-review-list-container-gap-mobile  : 12px;
+		--woocommerce-product-review-list-container-gap-tablet  : 24px;
+		--woocommerce-product-review-list-container-gap-desktop : 24px;
+
+		--woocommerce-product-review-avatar-size-mobile         : 35px;
+		--woocommerce-product-review-avatar-size-tablet         : 45px;
+		--woocommerce-product-review-avatar-size-desktop        : 45px;
+		--woocommerce-product-review-avatar-shadow              : none;
+		--woocommerce-product-review-avatar-radius              : 50%;
+
+		--woocommerce-product-review-main-padding-mobile        : 0px;
+		--woocommerce-product-review-main-padding-tablet        : 0px;
+		--woocommerce-product-review-main-padding-desktop       : 0px;
+		--woocommerce-product-review-main-border                : none;
+		--woocommerce-product-review-main-radius                : var(--border-radius-small);
+
+		--woocommerce-product-review-meta-margin-mobile         : 0 0 16px;
+		--woocommerce-product-review-meta-margin-tablet         : 0 0 16px;
+		--woocommerce-product-review-meta-margin-desktop        : 0 0 16px;
+		--woocommerce-product-review-meta-color                 : var(--gray-cool-600);
+		--woocommerce-product-review-meta-font-size-mobile      : 14px;
+		--woocommerce-product-review-meta-font-size-table       : 14px;
+		--woocommerce-product-review-meta-font-size-desktop     : 14px;
+		--woocommerce-product-review-meta-gap-mobile            : 8px;
+		--woocommerce-product-review-meta-gap-tablet            : 8px;
+		--woocommerce-product-review-meta-gap-desktop           : 8px;
+
+		--woocommerce-product-review-date-color                 : var(--gray-cool-300);
+		--woocommerce-product-review-body-color                 : var(--gray-500);
+	}
+}
+
+.woocommerce-product-review {
+	margin : var(--woocommerce-product-review-margin-mobile);
+	@media screen and (min-width : $break-table) {
+		margin : var(--woocommerce-product-review-margin-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--woocommerce-product-review-margin-desktop);
+	}
+}
+
+.woocommerce-product-review__title {
+
+}
+
+.woocommerce-review-list {
+	@include text-sm-normal;
+	display               : grid;
+	width                 : 100%;
+	margin                : 0;
+	padding               : 0;
+	list-style            : none;
+	background            : 0 0;
+	gap                   : var(--woocommerce-product-review-list-gap-mobile);
+	grid-template-columns : 1fr;
+	grid-template-rows    : auto;
+	@media screen and (min-width : $break-table) {
+		gap : var(--woocommerce-product-review-list-gap-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		gap : var(--woocommerce-product-review-list-gap-desktop);
+	}
+}
+
+.woocommerce-review-list__item {
+	position : relative;
+}
+
+.woocommerce-review-list__container {
+	display         : flex;
+	align-items     : flex-start;
+	flex-flow       : row nowrap;
+	justify-content : flex-start;
+	gap             : var(--woocommerce-product-review-list-container-gap-mobile);
+	@media screen and (min-width : $break-table) {
+		gap : var(--woocommerce-product-review-list-container-gap-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		gap : var(--woocommerce-product-review-list-container-gap-desktop);
+	}
+}
+
+.woocommerce-review-list__image {
+	flex  : 0 0 auto;
+	width : var(--woocommerce-product-review-avatar-size-mobile);
+
+	@media screen and (min-width : $break-table) {
+		width  : var(--woocommerce-product-review-avatar-size-tablet);
+		height : var(--woocommerce-product-review-avatar-size-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		width  : var(--woocommerce-product-review-avatar-size-desktop);
+		height : var(--woocommerce-product-review-avatar-size-desktop);
+	}
+
+	img {
+		width           : var(--woocommerce-product-review-avatar-size-mobile);
+		height          : var(--woocommerce-product-review-avatar-size-mobile);
+		vertical-align  : top;
+		border-radius   : var(--woocommerce-product-review-avatar-radius);
+		background-size : cover;
+		box-shadow      : var(--woocommerce-product-review-avatar-shadow);
+		@media screen and (min-width : $break-table) {
+			width  : var(--woocommerce-product-review-avatar-size-tablet);
+			height : var(--woocommerce-product-review-avatar-size-tablet);
+		}
+		@media screen and (min-width : $break-desktop) {
+			width  : var(--woocommerce-product-review-avatar-size-desktop);
+			height : var(--woocommerce-product-review-avatar-size-desktop);
+		}
+	}
+}
+
+.woocommerce-review-list__main {
+	flex          : 1 1 auto;
+	box-sizing    : border-box;
+	padding       : var(--woocommerce-product-review-main-padding-mobile);
+	border        : var(--woocommerce-product-review-main-border);
+	border-radius : var(--woocommerce-product-review-main-radius);
+	@media screen and (min-width : $break-table) {
+		padding : var(--woocommerce-product-review-main-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--woocommerce-product-review-main-padding-desktop);
+	}
+}
+
+.woocommerce-review-list__meta {
+	font-size       : var(--woocommerce-product-review-meta-font-size-mobile);
+	display         : flex;
+	align-items     : center;
+	flex-flow       : row nowrap;
+	justify-content : flex-start;
+	margin          : var(--woocommerce-product-review-meta-margin-mobile);
+	color           : var(--woocommerce-product-review-meta-color);
+	gap             : var(--woocommerce-product-review-meta-gap-mobile);
+	@media screen and (min-width : $break-table) {
+		font-size : var(--woocommerce-product-review-meta-font-size-table);
+		margin    : var(--woocommerce-product-review-meta-margin-tablet);
+		gap       : var(--woocommerce-product-review-meta-gap-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		font-size : var(--woocommerce-product-review-meta-font-size-desktop);
+		margin    : var(--woocommerce-product-review-meta-margin-desktop);
+		gap       : var(--woocommerce-product-review-meta-gap-desktop);
+	}
+}
+
+.woocommerce-review-list__author {
+	font-weight : 500;
+}
+
+.woocommerce-review-list__info {
+	display : block;
+}
+
+.woocommerce-review-list__dash {
+	display : none;
+}
+
+.woocommerce-review-list__published-date {
+	display : block;
+	color   : var(--woocommerce-product-review-date-color);
+}
+
+.woocommerce-review-list__rating {
+	margin-left : auto;
+}
+
+.woocommerce-review-list__body {
+	color : var(--woocommerce-product-review-body-color);
+}

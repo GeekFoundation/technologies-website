@@ -1,0 +1,28 @@
+.no-results {
+
+}
+
+.no-results__form {
+
+	margin-top : 24px;
+
+	.search-form {
+		display         : flex;
+		flex-flow       : row nowrap;
+		justify-content : flex-start;
+		gap             : 12px;
+
+		> label {
+			flex : 1 1 auto;
+
+			input {
+				width : 100%;
+			}
+		}
+
+		.search-submit {
+			@extend .b-btn !optional;
+			@extend .b-btn--primary !optional;
+		}
+	}
+}

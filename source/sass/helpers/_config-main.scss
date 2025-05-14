@@ -1,0 +1,18 @@
+// Variables
+// ---------
+@import "vars/index";
+
+:root {
+	// Color
+	@include vars-color;
+	// Body
+	@include vars-body;
+	// Config
+	@include vars-config;
+	// Typography
+	@include vars-typography;
+	// Shadow
+	//@include vars-shadow;
+	//// Blur
+	//@include vars-blur;
+}

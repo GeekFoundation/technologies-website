@@ -1,0 +1,15 @@
+.blog-mobile {
+	@media screen and (min-width : $break-table) {
+
+	}
+	@media screen and (min-width : $break-desktop) {
+		display    : none;
+		visibility : hidden;
+	}
+}
+
+.blog-mobile__row {
+	select {
+		width : 100%;
+	}
+}

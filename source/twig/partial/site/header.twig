@@ -1,0 +1,47 @@
+<header class="header">
+    <div class="wrapper">
+        <div class="header__part">
+            <a href="/" class="header__logo">{{ header.logo }}</a>
+            <div class="header__icon" data-main-menu="trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="header__panel" data-main-menu="menu">
+                <div class="header__panel-top">
+                    <a href="/" class="header__logo">{{ header.logo }}</a>
+                    <div class="header__icon" data-main-menu="trigger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18M6 6L18 18"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="header__menu">
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <li class="header__item">
+                                <a href="#about" class="header__link js-scrollto-link" data-scrollto="">{{ header.menu[0].item }}</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#services" class="header__link js-scrollto-link" data-scrollto="">{{ header.menu[1].item }}</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#contact" class="header__link js-scrollto-link" data-scrollto="">{{ header.menu[2].item }}</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__panel-data">
+                    <div class="header__data">
+                        <a href="tel:{{ feedback.phoneLink }}" class="header__link-lang">{{ feedback.phone }}</a>
+                        <a href="mailto:{{ feedback.mail }}" class="header__link-lang">{{ feedback.mail }}</a>
+                    </div>
+                    <a href="{{ header.langLink }}" class="header__lang">
+                        <span>{{ header.lang }}</span>
+                        <span>{{ header.langIcon }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

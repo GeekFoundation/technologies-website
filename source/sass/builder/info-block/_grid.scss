@@ -1,0 +1,28 @@
+@at-root {
+	:root {
+		--widget-info-block-grid-mobile               : 38px 0;
+		--widget-info-block-grid-tablet               : 38px 24px;
+		--widget-info-block-grid-desktop              : 64px 32px;
+		--widget-info-block-grid-size-mobile          : 1;
+		--widget-info-block-grid-size-tablet          : 2;
+		--widget-info-block-grid-size-desktop         : 3;
+
+		--widget-info-block-grid-image-margin-mobile  : 0 0 16px;
+		--widget-info-block-grid-image-margin-tablet  : 0 0 24px;
+		--widget-info-block-grid-image-margin-desktop : 0 0 24px;
+	}
+}
+
+.widget-info-block__grid {
+	display               : grid;
+	gap                   : var(--widget-info-block-grid-mobile);
+	grid-template-columns : repeat(var(--widget-info-block-grid-size-mobile), 1fr);
+	@media screen and (min-width : $break-table) {
+		gap                   : var(--widget-info-block-grid-tablet);
+		grid-template-columns : repeat(var(--widget-info-block-grid-size-tablet), 1fr);
+	}
+	@media screen and (min-width : $break-desktop) {
+		gap                   : var(--widget-info-block-grid-desktop);
+		grid-template-columns : repeat(var(--widget-info-block-grid-size-desktop), 1fr);
+	}
+}

@@ -1,0 +1,43 @@
+@at-root {
+	:root {
+		--woocommerce-table-layout              : auto;
+		--woocommerce-table-tr-odd-background   : transparent;
+		--woocommerce-table-tr-odd-border       : 1px solid none;
+		--woocommerce-table-tr-hover-background : var(--gray-10);
+		--woocommerce-table-tr-hover-border     : 1px solid none;
+		--woocommerce-table-padding             : 10px 5px;
+		--woocommerce-table-head-color          : var(--gray-500);
+	}
+}
+
+.woocommerce-table {
+	width           : 100%;
+	table-layout    : var(--woocommerce-table-layout);
+	border-spacing  : 0;
+	border-collapse : collapse;
+}
+
+.woocommerce-table__item {
+	font-size : 14px;
+
+	&:nth-of-type(odd) {
+		border-top    : var(--woocommerce-table-tr-odd-border);
+		border-bottom : var(--woocommerce-table-tr-odd-border);
+		background    : var(--woocommerce-table-tr-odd-background);
+	}
+
+	th,
+	td {
+		padding : var(--woocommerce-table-padding);
+		@include text-md-normal;
+	}
+
+	&:hover {
+		th,
+		td {
+			border-top       : var(--woocommerce-table-tr-hover-border);
+			border-bottom    : var(--woocommerce-table-tr-hover-border);
+			background-color : var(--woocommerce-table-tr-hover-background);
+		}
+	}
+}

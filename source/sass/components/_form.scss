@@ -1,0 +1,166 @@
+@at-root {
+	:root {
+		--form-gap               : 12px;
+
+		// Label
+		--form-label-color       : var(--brand-600);
+		--form-line-height       : 1.42;
+		--form-label-size        : 14px;
+		--form-label-weight      : 400;
+		--form-label-margin      : 0 0 8px;
+
+
+		// Error
+		--form-error-color       : var(--error-500);
+		--form-error-line-height : 1.2;
+		--form-error-size        : 14px;
+		--form-error-weight      : 400;
+		--form-error-margin      : 8px 0 0;
+
+		// Hint
+		--form-hint-color        : var(--gray-500);
+		--form-hint-line-height  : 1.2;
+		--form-hint-size         : 14px;
+		--form-hint-weight       : 400;
+		--form-hint-margin       : 8px 0 0;
+	}
+
+}
+
+// -----------------------------------------------
+//  Form style
+// -----------------------------------------------
+.form-grid {
+	display               : grid;
+	gap                   : var(--form-gap);
+	grid-template-columns : repeat(4, 1fr);
+}
+
+.form-grid__item {
+	position    : relative;
+	margin      : 0;
+	grid-column : span 4;
+
+	p#{&} {
+		display : block;
+	}
+
+    &--line {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+	@media screen and (min-width : $break-table) {
+		&--cols-3 {
+			grid-column : span 3;
+		}
+
+		&--cols-2 {
+			grid-column : span 2;
+		}
+
+		&--cols-1 {
+			grid-column : span 1;
+		}
+
+        &--line {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+	}
+
+    @media screen and (min-width : $break-desktop) {
+       &--cols-2 {
+           grid-column: span 4;
+       }
+    }
+
+	input[type="text"],
+	input[type="email"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="password"],
+	.select2,
+	select,
+	textarea {
+		width          : 100%;
+		vertical-align : top;
+	}
+
+	> label:not(.checkbox-style):not(.radio-style):not(.checkbox-switch) {
+		font-size       : var(--form-label-size);
+		font-weight     : var(--form-label-weight);
+		line-height     : var(--form-line-height);
+		display         : flex;
+		align-items     : center;
+		flex-flow       : row nowrap;
+		justify-content : space-between;
+		margin          : var(--form-label-margin);
+		cursor          : pointer;
+		color           : var(--form-label-color);
+
+		.required {
+			color : var(--error-700);
+		}
+
+		> span {
+			order : 0;
+		}
+
+		.error-message {
+			margin-top  : 0;
+			margin-left : 10px;
+
+			+ span {
+				color : var(--red);
+			}
+		}
+	}
+
+	&--label-no-flex {
+		> label:not(.checkbox-style):not(.radio-style):not(.checkbox-switch) {
+			display : block;
+		}
+	}
+}
+
+.form-grid__input {
+	position : relative;
+}
+
+.form-grid__hint {
+	font-size   : var(--form-hint-size);
+	font-weight : var(--form-hint-weight);
+	line-height : var(--form-hint-line-height);
+	position    : relative;
+	z-index     : 2;
+	margin      : var(--form-hint-margin);
+	color       : var(--form-hint-color);
+}
+
+.form-grid__label {
+    @include text-sm-medium;
+    margin-bottom: 8px;
+    color: var(--all-base-white);
+}
+
+.wpcf7-form-control-wrap {
+    display: block;
+}
+
+.wpcf7-not-valid-tip,
+.form-grid__error {
+	font-size   : var(--form-error-size);
+	font-weight : var(--form-error-weight);
+	line-height : var(--form-error-line-height);
+	z-index     : 3;
+	color       : var(--form-error-color);
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+}
+

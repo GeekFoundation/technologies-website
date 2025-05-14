@@ -1,0 +1,108 @@
+@at-root {
+	:root {
+		--accordion-item-padding-mobile      : 16px 0;
+		--accordion-item-padding-tablet      : 20px 0;
+		--accordion-item-padding-desktop     : 24px 0;
+		--accordion-item-border-color        : var(--border-color);
+
+		--accordion-item-button-color        : var(--gray-900);
+		--accordion-item-button-color-hover  : var(--gray-600);
+		--accordion-item-button-color-active : var(--primary-800);
+		--accordion-item-button-arrow        : var(--gray-400);
+		--accordion-item-button-arrow-active : var(--gray-500);
+		--accordion-item-button-gap          : 10px;
+
+		--accordion-content-padding-mobile   : 10px 0 0;
+		--accordion-content-padding-tablet   : 10px 0 0;
+		--accordion-content-padding-desktop  : 10px 0 0;
+		--accordion-content-color            : var(--gray-600);
+	}
+}
+
+.accordion-item {
+	padding    : var(--accordion-item-padding-mobile);
+	border-top : 1px solid var(--accordion-item-border-color);
+
+	&:last-child {
+		border-bottom : 1px solid var(--accordion-item-border-color);
+	}
+
+	@media screen and (min-width : $break-table) {
+		padding : var(--accordion-item-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--accordion-item-padding-desktop);
+	}
+}
+
+.accordion-item__button {
+	display                     : flex;
+	align-items                 : center;
+	flex-flow                   : row nowrap;
+	justify-content             : flex-start;
+	box-sizing                  : border-box;
+	width                       : 100%;
+	padding                     : 0;
+	cursor                      : pointer;
+	transition                  : color .3s ease;
+	text-align                  : left;
+	color                       : var(--accordion-item-button-color);
+	border                      : 0;
+	outline                     : 0;
+	background                  : transparent;
+	gap                         : var(--accordion-item-button-gap);
+	-webkit-tap-highlight-color : transparent;
+	@include text-md-medium;
+	@media screen and (min-width : $break-table) {
+		@include text-lg-medium;
+	}
+
+	&:hover {
+		color : var(--accordion-item-button-color-hover);
+	}
+
+	&.active {
+		color : var(--accordion-item-button-color-active);
+	}
+}
+
+.accordion-item__arrow {
+	flex             : 0 0 auto;
+	margin-left      : auto;
+	transition       : color .3s ease, transform .3s ease;
+	transform        : rotate(0deg);
+	transform-origin : 50% 50%;
+	color            : var(--accordion-item-button-arrow);
+
+	&.active {
+		transform : rotate(-90deg);
+		color     : var(--accordion-item-button-arrow-active);
+	}
+}
+
+.accordion-item__image {
+	flex : 0 0 auto;
+}
+
+.accordion-item__icon {
+	display : block;
+
+	> span {
+		display : block;
+	}
+}
+
+.accordion-item__content {
+	padding : var(--accordion-content-padding-mobile);
+	@media screen and (min-width : $break-table) {
+		padding : var(--accordion-content-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--accordion-content-padding-desktop);
+	}
+}
+
+.accordion-item__description {
+	@include text-md-normal;
+	color : var(--accordion-content-color);
+}

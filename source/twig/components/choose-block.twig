@@ -1,0 +1,11 @@
+{% for item in list%}
+    <div class="choose-block" >
+        <div class="choose-block__icon">
+            <img src="images/icons/{{ item.icon }}.svg" width="28" height="28" loading="lazy" alt="">
+        </div>
+        <div class="choose-block__desc">
+            <h4 class="choose-block__title">{{ item.title }}</h4>
+            <div class="choose-block__text">{{ item.text }}</div>
+        </div>
+    </div>
+{% endfor %}

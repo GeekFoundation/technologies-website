@@ -1,0 +1,11 @@
+.woocommerce-product-taglist {
+	@include tag-list;
+
+	a {
+		@include tag-list-item(var(--base-white), var(--primary-600));
+
+		&:hover {
+			@include tag-list-item-hover(var(--base-white), var(--primary-800));
+		}
+	}
+}

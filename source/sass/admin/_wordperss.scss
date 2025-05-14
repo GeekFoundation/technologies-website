@@ -1,0 +1,108 @@
+.siteorigin-panels-builder .so-panels-welcome-message .so-tip-wrapper,
+.siteorigin-panels-builder .so-builder-toolbar .so-tool-button.so-learn {
+	display    : none;
+	visibility : hidden;
+}
+
+#profile-page {
+	.user-description-wrap,
+	.user-profile-picture {
+		display    : none;
+		visibility : hidden;
+	}
+
+	h2:has(+ .form-table .user-description-wrap) {
+		display    : none;
+		visibility : hidden;
+	}
+
+	.form-table:has(.user-description-wrap) {
+		display    : none;
+		visibility : hidden;
+	}
+}
+
+.redux-main #redux-sticky #info_bar {
+	height : 46px;
+}
+
+.redux-container-text input {
+	width : 100%;
+}
+
+.redux-container-repeater {
+	h4 {
+		margin-top : 10px;
+	}
+
+	.redux-repeaters-remove,
+	.redux-repeaters-add {
+		float      : none;
+		width      : 100%;
+		margin-top : 10px;
+		text-align : center;
+	}
+
+	.redux-repeaters-add {
+		font-size   : 18px;
+		line-height : 46px;
+		min-height  : 46px;
+	}
+}
+
+
+select#page_template {
+	option[value="redux-templates_contained"],
+	option[value="redux-templates_canvas"],
+	option[value="redux-templates_full_width"] {
+		display    : none;
+		visibility : hidden;
+	}
+}
+
+body {
+	div.siteorigin-widget-form div.siteorigin-widget-field.siteorigin-widget-field-type-autocomplete .select-content-button, div.siteorigin-widget-form div.siteorigin-widget-field.siteorigin-widget-field-type-link .select-content-button {
+		width : 125px;
+	}
+
+	.so-panels-live-editor.live-editor-mobile-mode {
+		.so-preview {
+			iframe {
+				width : 360px !important;
+			}
+		}
+	}
+
+}
+
+#customize-header-actions {
+	#pll-language-select {
+		padding : 4px 5px !important;
+	}
+}
+
+body {
+	#customize-theme-controls {
+		#accordion-panel-site_settings_panel .accordion-section-title {
+			color             : var(--base-white, #FFF);
+			border-left-color : var(--primary-900, rgba(66, 48, 125, 1));
+			background        : var(--primary-600, rgba(127, 86, 217, 1));
+
+			&::after {
+				color : var(--base-white, #FFF);
+			}
+		}
+	}
+
+	.wp-full-overlay.in-sub-panel {
+		#customize-header-actions {
+			> span:first-child {
+				left : -9px !important;
+			}
+
+			#pll-language-select {
+				left : -13px !important;
+			}
+		}
+	}
+}

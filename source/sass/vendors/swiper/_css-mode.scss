@@ -1,0 +1,27 @@
+.swiper-css-mode {
+	> .swiper-wrapper {
+		overflow           : auto;
+		scrollbar-width    : none;
+		-ms-overflow-style : none;
+
+		&::-webkit-scrollbar {
+			display : none;
+		}
+	}
+
+	> .swiper-wrapper > .swiper-slide {
+		scroll-snap-align : start start;
+	}
+}
+
+.swiper-horizontal.swiper-css-mode {
+	> .swiper-wrapper {
+		scroll-snap-type : x mandatory;
+	}
+}
+
+.swiper-vertical.swiper-css-mode {
+	> .swiper-wrapper {
+		scroll-snap-type : y mandatory;
+	}
+}

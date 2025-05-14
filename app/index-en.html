@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Main</title>
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+	<link rel="shortcut icon" href="favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+	<link rel="manifest" href="favicon/site.webmanifest2" />
+	<script>/*! @formatter:off modernizr 3.6.0 (Custom Build) | MIT https://modernizr.com/download/?-overflowscrolling-webp-setclasses !*/!function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,i,s,a;for(var l in _)if(_.hasOwnProperty(l)){if(e=[],n=_[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,i=0;i<e.length;i++)s=e[i],a=s.split("."),1===a.length?Modernizr[a[0]]=o:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=o),w.push((o?"":"no-")+a.join("-"))}}function i(e){var n=S.className,t=Modernizr._config.classPrefix||"";if(B&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),B?S.className.baseVal=n:S.className=n)}function s(e,n){if("object"==typeof e)for(var t in e)b(e,t)&&s(t,e[t]);else{e=e.toLowerCase();var r=e.split("."),o=Modernizr[r[0]];if(2==r.length&&(o=o[r[1]]),"undefined"!=typeof o)return Modernizr;n="function"==typeof n?n():n,1==r.length?Modernizr[r[0]]=n:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=n),i([(n&&0!=n?"":"no-")+r.join("-")]),Modernizr._trigger(e,n)}return Modernizr}function a(e,n){return!!~(""+e).indexOf(n)}function l(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):B?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function A(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function u(e,n){return function(){return e.apply(n,arguments)}}function f(e,n,t){var o;for(var i in e)if(e[i]in n)return t===!1?e[i]:(o=n[e[i]],r(o,"function")?u(o,t||n):o);return!1}function c(n,t,r){var o;if("getComputedStyle"in e){o=getComputedStyle.call(e,n,t);var i=e.console;if(null!==o)r&&(o=o.getPropertyValue(r));else if(i){var s=i.error?"error":"log";i[s].call(i,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else o=!t&&n.currentStyle&&n.currentStyle[r];return o}function p(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(){var e=n.body;return e||(e=l(B?"svg":"body"),e.fake=!0),e}function m(e,t,r,o){var i,s,a,A,u="modernizr",f=l("div"),c=d();if(parseInt(r,10))for(;r--;)a=l("div"),a.id=o?o[r]:u+(r+1),f.appendChild(a);return i=l("style"),i.type="text/css",i.id="s"+u,(c.fake?c:f).appendChild(i),c.appendChild(f),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(n.createTextNode(e)),f.id=u,c.fake&&(c.style.background="",c.style.overflow="hidden",A=S.style.overflow,S.style.overflow="hidden",S.appendChild(c)),s=t(f,e),c.fake?(c.parentNode.removeChild(c),S.style.overflow=A,S.offsetHeight):f.parentNode.removeChild(f),!!s}function g(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(p(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+p(n[o])+":"+r+")");return i=i.join(" or "),m("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==c(e,null,"position")})}return t}function h(e,n,o,i){function s(){f&&(delete U.style,delete U.modElem)}if(i=r(i,"undefined")?!1:i,!r(o,"undefined")){var u=g(e,o);if(!r(u,"undefined"))return u}for(var f,c,p,d,m,h=["modernizr","tspan","samp"];!U.style&&h.length;)f=!0,U.modElem=l(h.shift()),U.style=U.modElem.style;for(p=e.length,c=0;p>c;c++)if(d=e[c],m=U.style[d],a(d,"-")&&(d=A(d)),U.style[d]!==t){if(i||r(o,"undefined"))return s(),"pfx"==n?d:!0;try{U.style[d]=o}catch(v){}if(U.style[d]!=m)return s(),"pfx"==n?d:!0}return s(),!1}function v(e,n,t,o,i){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+x.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?h(a,n,o,i):(a=(e+" "+E.join(s+" ")+s).split(" "),f(a,n,t))}function y(e,n,r){return v(e,t,t,n,r)}var w=[],_=[],C={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){_.push({name:e,fn:n,options:t})},addAsyncTest:function(e){_.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=C,Modernizr=new Modernizr;var b,S=n.documentElement,B="svg"===S.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;b=r(e,"undefined")||r(e.call,"undefined")?function(e,n){return n in e&&r(e.constructor.prototype[n],"undefined")}:function(n,t){return e.call(n,t)}}(),C._l={},C.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},C._trigger=function(e,n){if(this._l[e]){var t=this._l[e];setTimeout(function(){var e,r;for(e=0;e<t.length;e++)(r=t[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){C.addTest=s}),Modernizr.addAsyncTest(function(){function e(e,n,t){function r(n){var r=n&&"load"===n.type?1==o.width:!1,i="webp"===e;s(e,i&&r?new Boolean(r):r),t&&t(n)}var o=new Image;o.onerror=r,o.onload=r,o.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],t=n.shift();e(t.name,t.uri,function(t){if(t&&"load"===t.type)for(var r=0;r<n.length;r++)e(n[r].name,n[r].uri)})});var Q="Moz O ms Webkit",x=C._config.usePrefixes?Q.split(" "):[];C._cssomPrefixes=x;var E=C._config.usePrefixes?Q.toLowerCase().split(" "):[];C._domPrefixes=E;var T={elem:l("modernizr")};Modernizr._q.push(function(){delete T.elem});var U={style:T.elem.style};Modernizr._q.unshift(function(){delete U.style}),C.testAllProps=v,C.testAllProps=y,Modernizr.addTest("overflowscrolling",y("overflowScrolling","touch",!0)),o(),i(w),delete C.addTest,delete C.addAsyncTest;for(var P=0;P<Modernizr._q.length;P++)Modernizr._q[P]();e.Modernizr=Modernizr}(window,document);/*! @formatter:on */</script>
+
+</head>
+
+<body>
+	<div class="page-wrapper">
+		<header class="header">
+			<div class="wrapper">
+				<div class="header__part">
+					<a href="/" class="header__logo">Geek Technologies</a>
+					<div class="header__icon" data-main-menu="trigger">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</div>
+					<div class="header__panel" data-main-menu="menu">
+						<div class="header__panel-top">
+							<a href="/" class="header__logo">Geek Technologies</a>
+							<div class="header__icon" data-main-menu="trigger">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M18 6L6 18M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+						</div>
+						<div class="header__menu">
+							<nav class="header__nav">
+								<ul class="header__list">
+									<li class="header__item">
+										<a href="#about" class="header__link js-scrollto-link" data-scrollto="">About</a>
+									</li>
+									<li class="header__item">
+										<a href="#services" class="header__link js-scrollto-link" data-scrollto="">Services</a>
+									</li>
+									<li class="header__item">
+										<a href="#contact" class="header__link js-scrollto-link" data-scrollto="">Contact</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="header__panel-data">
+							<div class="header__data">
+								<a href="tel:+11234567890" class="header__link-lang">+1 (123) 456-7890</a>
+								<a href="mailto:fishmail@gmail.com" class="header__link-lang">fishmail@gmail.com</a>
+							</div>
+							<a href="index.html" class="header__lang">
+								<span>اللغة العربية</span>
+								<span><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
+										<path d='M12.913 17H20.087M12.913 17L11 21M12.913 17L15.7783 11.009C16.0092 10.5263 16.1246 10.2849 16.2826 10.2086C16.4199 10.1423 16.5801 10.1423 16.7174 10.2086C16.8754 10.2849 16.9908 10.5263 17.2217 11.009L20.087 17M20.087 17L22 21M2 5H8M8 5H11.5M8 5V3M11.5 5H14M11.5 5C11.0039 7.95729 9.85259 10.6362 8.16555 12.8844M10 14C9.38747 13.7248 8.76265 13.3421 8.16555 12.8844M8.16555 12.8844C6.81302 11.8478 5.60276 10.4266 5 9M8.16555 12.8844C6.56086 15.0229 4.47143 16.7718 2 18' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' />
+									</svg></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+		<section class="hero section">
+			<div class="wrapper">
+				<div class="hero__part">
+					<div class="hero__desc">
+						<div class="hero__desc-block">
+							<h3 class="section__subtitle" data-scroll-animate='{"opacity": 0, "x": -100, "duration": 0.5, "delay": 1}'>Innovating Technologies, Empowering Businesses</h3>
+							<h1 class="section__title section__title--main" data-scroll-animate='{"opacity": 0, "x": -100, "duration": 1}'>Welcome to Geek Technologies</h1>
+							<a href="#" class="b-btn b-btn--primary hero__btn-desktop">
+								<span>Read more</span>
+							</a>
+						</div>
+						<div class="hero__unit" data-scroll-animate='{"opacity": 0, "x": -30, "duration": 0.7}'>
+							<div class="hero__desc-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M9 2V4M15 2V4M9 20V22M15 20V22M20 9H22M20 14H22M2 9H4M2 14H4M8.8 20H15.2C16.8802 20 17.7202 20 18.362 19.673C18.9265 19.3854 19.3854 18.9265 19.673 18.362C20 17.7202 20 16.8802 20 15.2V8.8C20 7.11984 20 6.27976 19.673 5.63803C19.3854 5.07354 18.9265 4.6146 18.362 4.32698C17.7202 4 16.8802 4 15.2 4H8.8C7.11984 4 6.27976 4 5.63803 4.32698C5.07354 4.6146 4.6146 5.07354 4.32698 5.63803C4 6.27976 4 7.11984 4 8.8V15.2C4 16.8802 4 17.7202 4.32698 18.362C4.6146 18.9265 5.07354 19.3854 5.63803 19.673C6.27976 20 7.11984 20 8.8 20ZM10.6 15H13.4C13.9601 15 14.2401 15 14.454 14.891C14.6422 14.7951 14.7951 14.6422 14.891 14.454C15 14.2401 15 13.9601 15 13.4V10.6C15 10.0399 15 9.75992 14.891 9.54601C14.7951 9.35785 14.6422 9.20487 14.454 9.10899C14.2401 9 13.9601 9 13.4 9H10.6C10.0399 9 9.75992 9 9.54601 9.10899C9.35785 9.20487 9.20487 9.35785 9.10899 9.54601C9 9.75992 9 10.0399 9 10.6V13.4C9 13.9601 9 14.2401 9.10899 14.454C9.20487 14.6422 9.35785 14.7951 9.54601 14.891C9.75992 15 10.0399 15 10.6 15Z" stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+							<div class="hero__unit-name">Our Mission</div>
+							<div class="hero__unit-text">Excellence in Technology Solutions and Software Development.</div>
+						</div>
+					</div>
+					<div class="hero__block-picture" data-scroll-animate='{"opacity": 0, "x": 30, "duration": 0.7}'>
+						<div class="hero__picture">
+							<picture>
+
+
+
+								<source srcset="images/hero/hero.webp 1x, images/hero/hero@2x.webp 1.3x" type="image/webp">
+								<source srcset="images/hero/hero.jpg 1x, images/hero/hero@2x.jpg 1.3x" type="image/jpg">
+
+
+								<img src="images/hero/hero.jpg" width="705" height="900" loading="eager" alt="image">
+
+							</picture>
+
+						</div>
+						<a href="#" class="b-btn b-btn--secondary hero__btn">
+							<span>Read more</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="about section" id="about">
+			<div class="wrapper">
+				<div class="section__name">Tell Our Story — 01</div>
+				<div class="about__part">
+					<div class="about__desc">
+						<h2 class="section__title">About Us</h2>
+						<h3 class="section__subtitle section__subtitle--large">At Geek Technologies, we specialize in delivering cutting-edge solutions tailored to the needs of business and financial institutions, enterprises, and organizations seeking to optimize their infrastructure. </h3>
+						<div class="about__text">
+							<p>With expertise spanning financial software development, security audits, and consultancy, we are your trusted partner in navigating the complexities of the modern financial ecosystem.</p>
+							<p>We aim to empower businesses by providing bespoke services that blend advanced technology with deep industry knowledge. Whether you are looking to develop sophisticated financial software, secure your digital assets, or optimize operational efficiency, our team delivers exceptional results that drive success.</p>
+						</div>
+					</div>
+					<div class="about__picture" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
+						<picture>
+
+
+
+							<source srcset="images/hero/about.webp 1x, images/hero/about@2x.webp 1.3x" type="image/webp">
+							<source srcset="images/hero/about.png 1x, images/hero/about@2x.png 1.3x" type="image/png">
+
+
+							<img src="images/hero/about.png" loading="lazy" decoding="async" alt="" width="683" height="559">
+
+						</picture>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section offer" id="services" data-panels="wrapper">
+			<div class="wrapper">
+				<div class="section__name">Services — 02</div>
+				<h2 class="section__title">What We Offer</h2>
+				<div class="offer__list">
+
+					<div class="offer__item" data-panels="section">
+						<div class="offer-block " data-modal-open="development" data-panels="item">
+							<div class="offer-block__icon">
+								<div class="offer-block__arrow">
+									<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+										<path d="M10.1097 22.6668L23.4431 9.3335M23.4431 9.3335H10.1097M23.4431 9.3335V22.6668" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="offer-block__foil">
+									<svg xmlns="http://www.w3.org/2000/svg" width="96" height="95" viewBox="0 0 96 95" fill="none">
+										<path d="M0.996094 0.0644531C8.7941 0.474874 15.0962 6.45407 16 14.1162V56C16 69.2548 26.7452 80 40 80H81.2441C89.212 80.5845 95.5423 86.9894 96 95V0H-0.223633L0.996094 0.0644531Z" />
+									</svg>
+								</div>
+							</div>
+							<div class="offer-block__desc">
+								<h4 class="offer-block__title">Financial Software Development</h4>
+								<div class="offer-block__text">Our expertise in financial technology empowers banks, funds, and fintech companies with tailored accounting software and integrations for cryptocurrencies. From custom accounting systems to DeFi and DEX integration, we deliver scalable, innovative solutions to modernize your operations.</div>
+							</div>
+							<div class="offer-block__picture">
+								<picture>
+
+
+
+									<source srcset="images/hero/step-1.webp 1x, images/hero/step-1@2x.webp 1.3x" type="image/webp">
+									<source srcset="images/hero/step-1.png 1x, images/hero/step-1@2x.png 1.3x" type="image/png">
+
+
+									<img src="images/hero/step-1.png" loading="lazy" decoding="async" alt="" width="396" height="256">
+
+								</picture>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="offer__item" data-panels="section">
+						<div class="offer-block offer-block--gray" data-modal-open="audits" data-panels="item">
+							<div class="offer-block__icon">
+								<div class="offer-block__arrow">
+									<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+										<path d="M10.1097 22.6668L23.4431 9.3335M23.4431 9.3335H10.1097M23.4431 9.3335V22.6668" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="offer-block__foil">
+									<svg xmlns="http://www.w3.org/2000/svg" width="96" height="95" viewBox="0 0 96 95" fill="none">
+										<path d="M0.996094 0.0644531C8.7941 0.474874 15.0962 6.45407 16 14.1162V56C16 69.2548 26.7452 80 40 80H81.2441C89.212 80.5845 95.5423 86.9894 96 95V0H-0.223633L0.996094 0.0644531Z" />
+									</svg>
+								</div>
+							</div>
+							<div class="offer-block__desc">
+								<h4 class="offer-block__title">Infrastructure Audits</h4>
+								<div class="offer-block__text">Protect your business with our comprehensive security services. We conduct infrastructure-wide audits, ensure application-layer security, verify smart contract integrity, and assist with PCI DSS certification, safeguarding your systems against vulnerabilities.</div>
+							</div>
+							<div class="offer-block__picture">
+								<picture>
+
+
+
+									<source srcset="images/hero/step-2.webp 1x, images/hero/step-2@2x.webp 1.3x" type="image/webp">
+									<source srcset="images/hero/step-2.png 1x, images/hero/step-2@2x.png 1.3x" type="image/png">
+
+
+									<img src="images/hero/step-2.png" loading="lazy" decoding="async" alt="" width="396" height="256">
+
+								</picture>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="offer__item" data-panels="section">
+						<div class="offer-block offer-block--gray-more" data-modal-open="consultancy" data-panels="item">
+							<div class="offer-block__icon">
+								<div class="offer-block__arrow">
+									<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+										<path d="M10.1097 22.6668L23.4431 9.3335M23.4431 9.3335H10.1097M23.4431 9.3335V22.6668" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="offer-block__foil">
+									<svg xmlns="http://www.w3.org/2000/svg" width="96" height="95" viewBox="0 0 96 95" fill="none">
+										<path d="M0.996094 0.0644531C8.7941 0.474874 15.0962 6.45407 16 14.1162V56C16 69.2548 26.7452 80 40 80H81.2441C89.212 80.5845 95.5423 86.9894 96 95V0H-0.223633L0.996094 0.0644531Z" />
+									</svg>
+								</div>
+							</div>
+							<div class="offer-block__desc">
+								<h4 class="offer-block__title">Consultancy</h4>
+								<div class="offer-block__text">Leverage our hands-on expertise in DevOps, cost optimization, and infrastructure management. We provide practical solutions tailored to your unique challenges, available through flexible engagement models like hourly services or monthly subscriptions.</div>
+							</div>
+							<div class="offer-block__picture">
+								<picture>
+
+
+
+									<source srcset="images/hero/step-3.webp 1x, images/hero/step-3@2x.webp 1.3x" type="image/webp">
+									<source srcset="images/hero/step-3.png 1x, images/hero/step-3@2x.png 1.3x" type="image/png">
+
+
+									<img src="images/hero/step-3.png" loading="lazy" decoding="async" alt="" width="396" height="256">
+
+								</picture>
+
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+		<section class="section choose">
+			<div class="wrapper">
+				<div class="choose__part">
+					<div class="choose__desc">
+						<div class="section__name">Why Us? — 03</div>
+						<h2 class="section__title">Why Choose Us?</h2>
+						<div class="choose__list">
+
+							<div class="choose-block">
+								<div class="choose-block__icon">
+									<img src="images/icons/icon-1.svg" width="28" height="28" loading="lazy" alt="">
+								</div>
+								<div class="choose-block__desc">
+									<h4 class="choose-block__title">Deep Expertise</h4>
+									<div class="choose-block__text">Our team comprises specialists with a proven track record in financial software, blockchain, and cybersecurity.</div>
+								</div>
+							</div>
+
+							<div class="choose-block">
+								<div class="choose-block__icon">
+									<img src="images/icons/icon-2.svg" width="28" height="28" loading="lazy" alt="">
+								</div>
+								<div class="choose-block__desc">
+									<h4 class="choose-block__title">Tailored Solutions</h4>
+									<div class="choose-block__text"> Every service we offer is customized to meet your specific business needs.  </div>
+								</div>
+							</div>
+
+							<div class="choose-block">
+								<div class="choose-block__icon">
+									<img src="images/icons/icon-3.svg" width="28" height="28" loading="lazy" alt="">
+								</div>
+								<div class="choose-block__desc">
+									<h4 class="choose-block__title">Holistic Approach</h4>
+									<div class="choose-block__text">We go beyond isolated problem-solving to deliver end-to-end solutions that drive lasting value.</div>
+								</div>
+							</div>
+
+							<div class="choose-block">
+								<div class="choose-block__icon">
+									<img src="images/icons/icon-4.svg" width="28" height="28" loading="lazy" alt="">
+								</div>
+								<div class="choose-block__desc">
+									<h4 class="choose-block__title">Commitment to Quality</h4>
+									<div class="choose-block__text">We pride ourselves on adhering to the highest industry standards and exceeding client expectations.</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div class="choose__picture" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
+						<picture>
+
+
+
+							<source srcset="images/hero/choose.webp 1x, images/hero/choose@2x.webp 1.3x" type="image/webp">
+							<source srcset="images/hero/choose.jpg 1x, images/hero/choose@2x.jpg 1.3x" type="image/jpg">
+
+
+							<img src="images/hero/choose.jpg" loading="lazy" decoding="async" alt="" width=670 height=616>
+
+						</picture>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="feedback section" id="contact">
+			<div class="wrapper">
+				<div class="feedback__part">
+					<div class="feedback__desc">
+						<div class="section__name">Contact — 04</div>
+						<h2 class="section__title">Your Success, Secured</h2>
+						<div class="feedback__text">At Geek Technologies, we are not just service providers—we are your strategic partners. Let us help you innovate, secure, and grow in a rapidly evolving financial and technological landscape.</div>
+						<div class="feedback__data">
+							<a href="tel:+11234567890" class="feedback__link">+1 (123) 456-7890</a>
+							<a href="mailto:fishmail@gmail.com" class="feedback__link">fishmail@gmail.com</a>
+						</div>
+					</div>
+					<div class="feedback__block-form" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
+						<div class="feedback__icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+								<path d="M16.0347 3.07212L24.8174 8.78087C25.1277 8.98259 25.2829 9.08345 25.3953 9.21799C25.4948 9.33708 25.5696 9.47483 25.6152 9.62318C25.6667 9.79076 25.6667 9.97583 25.6667 10.346V18.8996C25.6667 20.8598 25.6667 21.8399 25.2852 22.5886C24.9497 23.2472 24.4142 23.7826 23.7557 24.1181C23.007 24.4996 22.0269 24.4996 20.0667 24.4996H7.93337C5.97319 24.4996 4.9931 24.4996 4.24441 24.1181C3.58584 23.7826 3.05041 23.2472 2.71485 22.5886C2.33337 21.8399 2.33337 20.8598 2.33337 18.8996V10.346C2.33337 9.97583 2.33337 9.79076 2.38491 9.62318C2.43052 9.47483 2.50528 9.33708 2.6048 9.21799C2.71722 9.08345 2.87239 8.98259 3.18273 8.78087L11.9654 3.07212M16.0347 3.07212C15.2982 2.59343 14.93 2.35408 14.5332 2.26096C14.1825 2.17864 13.8175 2.17864 13.4668 2.26096C13.0701 2.35408 12.7019 2.59343 11.9654 3.07212M16.0347 3.07212L23.2589 7.76786C24.0614 8.28947 24.4626 8.55028 24.6016 8.88103C24.723 9.17007 24.723 9.49583 24.6016 9.78487C24.4626 10.1156 24.0614 10.3764 23.2589 10.898L16.0347 15.5938C15.2982 16.0725 14.93 16.3118 14.5332 16.4049C14.1825 16.4873 13.8175 16.4873 13.4668 16.4049C13.0701 16.3118 12.7019 16.0725 11.9654 15.5938L4.74121 10.898C3.93872 10.3764 3.53748 10.1156 3.39851 9.78487C3.27706 9.49583 3.27706 9.17007 3.39851 8.88103C3.53748 8.55028 3.93872 8.28947 4.74121 7.76786L11.9654 3.07212M25.0834 22.1663L17.3334 15.1663M10.6667 15.1663L2.91671 22.1663" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+						<div class="feedback__form-name">Ready to Elevate <br>Your Business?</div>
+						<div class="feedback__form-text">Get in touch with us today to explore how our services can unlock new opportunities for your organization.</div>
+						<form action="#" class="feedback__form">
+							<div class="form-grid">
+								<div class="form-grid__item">
+									<div class="form-grid__input">
+										<input name="name" id="name" type="text" class="input-style" placeholder="Name" required="">
+									</div>
+								</div>
+								<div class="form-grid__item">
+									<div class="form-grid__input">
+										<input name="email" id="email" type="email" class="input-style" placeholder="Email" required="">
+									</div>
+								</div>
+								<div class="form-grid__item form-grid__item--line">
+									<label class="checkbox-style">
+										<input type="checkbox" name="rules" value="1" aria-invalid="false">
+										<span class="checkbox-style__wrapper wpcf7-list-item-label"><span>I Agree to <a href='privacy.html' target='_blank'>Privacy Policy</a></span>
+										</span>
+									</label>
+									<button class="b-btn b-btn--primary" type="submit"><span>Send</span></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<footer class="footer">
+			<div class="wrapper">
+				<div class="footer__line">
+					<div class="footer__coop">
+						Geek Technologie 2025 ©
+					</div>
+					<div class="footer__list">
+						<a href="privacy.html" class="footer__link">Privacy Policy</a>
+					</div>
+					<a href="https://rhino-digital.com/" target="_blank" rel="nofollow" class="footer__link">Made by Rhino Digital </a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<div class="modal" id="development">
+		<div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
+			<div role="dialog" class="modal__container" aria-modal="true">
+				<div class="modal__content">
+					<button class="modal__close" data-modal-close="development">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<div class="modal__part">
+						<div class="modal__part-top">
+							<div class="modal__title">
+								Financial Software Development
+							</div>
+							<div class="modal__desc">
+								<div class="modal__desc-title">
+									Empowering Financial Institutions with Tailored Software Solutions
+								</div>
+								<div class="modal__text">We specialize in designing and developing robust accounting and financial software for banks, investment funds, and fintech companies. Our solutions are crafted to meet the unique demands of the financial sector, ensuring compliance, scalability, and efficiency.</div>
+							</div>
+						</div>
+						<div class="modal__subtitle">Core Services</div>
+						<div class="modal__list">
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Custom Accounting Systems</h4>
+									<div class="modal-block__text">Our team comprises specialists with a proven track record in financial software, blockchain, and cybersecurity.</div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Cryptocurrency Integration</h4>
+									<div class="modal-block__text"> Every service we offer is customized to meet your specific business needs.  </div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">DeFi and DEX Connectivity</h4>
+									<div class="modal-block__text">We go beyond isolated problem-solving to deliver end-to-end solutions that drive lasting value.</div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Real-Time Data Scanners</h4>
+									<div class="modal-block__text">We pride ourselves on adhering to the highest industry standards and exceeding client expectations.</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="modal__unit">
+							<div class="modal__data">
+								<h4 class="modal__unit-name">Why Choose Us?</h4>
+								<div class="modal__unit-text">Our team combines deep financial industry knowledge with cutting-edge technology expertise. We ensure that our software solutions not only meet current industry standards but are also adaptable to future technological advancements.</div>
+							</div>
+							<a href="#" class="b-btn b-btn--primary">
+								<span>Contact</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal__bg" aria-hidden="true" data-modal-close="development"></div>
+		</div>
+	</div>
+
+	<div class="modal" id="audits">
+		<div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
+			<div role="dialog" class="modal__container" aria-modal="true">
+				<div class="modal__content">
+					<button class="modal__close" data-modal-close="audits">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<div class="modal__part">
+						<div class="modal__part-top">
+							<div class="modal__title">
+								Infrastructure Audits
+							</div>
+							<div class="modal__desc">
+								<div class="modal__desc-title">
+									Comprehensive Infrastructure Assessments for Financial Systems
+								</div>
+								<div class="modal__text">Security is paramount in the financial industry. Our audit services are designed to identify and mitigate risks across your entire infrastructure, from internal policies to application layers.​</div>
+							</div>
+						</div>
+						<div class="modal__subtitle">Audit Services</div>
+						<div class="modal__list">
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Infrastructure Audits</h4>
+									<div class="modal-block__text">Our team comprises specialists with a proven track record in financial software, blockchain, and cybersecurity.</div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Application Layer Audits</h4>
+									<div class="modal-block__text"> Every service we offer is customized to meet your specific business needs.  </div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Smart Contract Audits</h4>
+									<div class="modal-block__text">We go beyond isolated problem-solving to deliver end-to-end solutions that drive lasting value.</div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">PCI DSS Compliance</h4>
+									<div class="modal-block__text">We pride ourselves on adhering to the highest industry standards and exceeding client expectations.</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="modal__unit">
+							<div class="modal__data">
+								<h4 class="modal__unit-name">Our Approach</h4>
+								<div class="modal__unit-text">We adopt a holistic auditing methodology, ensuring that every component of your financial system is scrutinized. Our goal is to provide you with actionable insights that fortify your security posture and maintain compliance with industry regulations.​</div>
+							</div>
+							<a href="#" class="b-btn b-btn--primary">
+								<span>Contact</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal__bg" aria-hidden="true" data-modal-close="audits"></div>
+		</div>
+	</div>
+
+
+	<div class="modal" id="consultancy">
+		<div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
+			<div role="dialog" class="modal__container" aria-modal="true">
+				<div class="modal__content">
+					<button class="modal__close" data-modal-close="consultancy">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+					<div class="modal__part">
+						<div class="modal__part-top">
+							<div class="modal__title">
+								Consultancy
+							</div>
+							<div class="modal__desc">
+								<div class="modal__desc-title">
+									Expert Guidance to Optimize Financial IT Operations
+								</div>
+								<div class="modal__text">Our consultancy services are tailored to address specific challenges within your organization, particularly in the realm of DevOps and infrastructure management.​</div>
+							</div>
+						</div>
+						<div class="modal__subtitle">Consultancy Offerings</div>
+						<div class="modal__list">
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">DevOps Expertise</h4>
+									<div class="modal-block__text">Our team comprises specialists with a proven track record in financial software, blockchain, and cybersecurity.</div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">Infrastructure Cost Optimization</h4>
+									<div class="modal-block__text"> Every service we offer is customized to meet your specific business needs.  </div>
+								</div>
+							</div>
+
+							<div class="modal-block">
+								<div class="modal-block__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+										<path d="M23.3333 7L10.5 19.8333L4.66663 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<div class="modal-block__desc">
+									<h4 class="modal-block__title">On-Site Problem Solving</h4>
+									<div class="modal-block__text">We go beyond isolated problem-solving to deliver end-to-end solutions that drive lasting value.</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="modal__unit">
+							<div class="modal__data">
+								<h4 class="modal__unit-name">Flexible Engagement Models</h4>
+								<div class="modal__unit-text">We offer our consultancy services on an hourly basis or through monthly subscriptions, providing flexibility to meet your organization's needs and budget.​</div>
+							</div>
+							<a href="#" class="b-btn b-btn--primary">
+								<span>Contact</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal__bg" aria-hidden="true" data-modal-close="consultancy"></div>
+		</div>
+	</div>
+
+
+
+
+	<script src="js/app.min.js"></script>
+
+</body>
+
+</html>

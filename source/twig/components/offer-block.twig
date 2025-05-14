@@ -1,0 +1,29 @@
+{% for item in list%}
+    <div class="offer__item" data-panels="section" >
+        <div class="offer-block {{ item.cl }}" data-modal-open="{{item.modal}}" data-panels="item">
+            <div class="offer-block__icon">
+                <div class="offer-block__arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                        <path d="M10.1097 22.6668L23.4431 9.3335M23.4431 9.3335H10.1097M23.4431 9.3335V22.6668" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="offer-block__foil">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="95" viewBox="0 0 96 95" fill="none">
+                        <path d="M0.996094 0.0644531C8.7941 0.474874 15.0962 6.45407 16 14.1162V56C16 69.2548 26.7452 80 40 80H81.2441C89.212 80.5845 95.5423 86.9894 96 95V0H-0.223633L0.996094 0.0644531Z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="offer-block__desc">
+                <h4 class="offer-block__title">{{ item.title }}</h4>
+                <div class="offer-block__text">{{ item.text }}</div>
+            </div>
+            <div class="offer-block__picture">
+                {% include "picture-png.twig" with {
+                    img: item.img,
+                    w: '396',
+                    h: '256',
+                } only %}
+            </div>
+        </div>
+    </div>
+{% endfor %}

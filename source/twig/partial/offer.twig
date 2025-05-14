@@ -1,0 +1,32 @@
+<section class="section offer" id="services" data-panels="wrapper">
+    <div class="wrapper">
+        <div class="section__name">{{ offer.section }}</div>
+        <h2 class="section__title">{{ offer.title }}</h2>
+        <div class="offer__list">
+            {% include "../components/offer-block.twig" with {
+                list: [
+                    {
+                        modal: "development",
+                        title: offer.list[0].title,
+                        text: offer.list[0].text,
+                        img: 'images/hero/step-1'
+                    },
+                    {
+                        modal: "audits",
+                        cl: "offer-block--gray",
+                        title: offer.list[1].title,
+                        text: offer.list[1].text,
+                        img: 'images/hero/step-2'
+                    },
+                    {
+                        modal: "consultancy",
+                        cl: "offer-block--gray-more",
+                        title: offer.list[2].title,
+                        text: offer.list[2].text,
+                        img: 'images/hero/step-3'
+                    },
+                ]
+            } only %}
+        </div>
+    </div>
+</section>

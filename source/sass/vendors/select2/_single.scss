@@ -1,0 +1,27 @@
+.select2-selection--single {
+
+	display             : flex;
+	align-items         : center;
+	flex-flow           : row nowrap;
+	justify-content     : flex-start;
+	box-sizing          : border-box;
+	height              : var(--input-height);
+	padding             : var(--input-padding);
+	cursor              : pointer;
+	-webkit-user-select : none;
+	user-select         : none;
+
+	.select2-selection__rendered {
+		display       : block;
+		overflow      : hidden;
+		flex          : 1 1 auto;
+		white-space   : nowrap;
+		text-overflow : ellipsis;
+	}
+
+	.select2-selection__clear {
+		font-size        : 1em;
+		border           : none;
+		background-color : transparent;
+	}
+}

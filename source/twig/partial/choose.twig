@@ -1,0 +1,43 @@
+<section class="section choose">
+    <div class="wrapper">
+        <div class="choose__part">
+            <div class="choose__desc">
+                <div class="section__name">{{ choose.section }}</div>
+                <h2 class="section__title">{{ choose.title }}</h2>
+                <div class="choose__list">
+                    {% include "../components/choose-block.twig" with {
+                        list: [
+                            {
+                                title: choose.list[0].title,
+                                text: choose.list[0].text,
+                                icon: 'icon-1'
+                            },
+                            {
+                                title: choose.list[1].title,
+                                text: choose.list[1].text,
+                                icon: 'icon-2'
+                            },
+                            {
+                                title: choose.list[2].title,
+                                text: choose.list[2].text,
+                                icon: 'icon-3'
+                            },
+                            {
+                                title: choose.list[3].title,
+                                text: choose.list[3].text,
+                                icon: 'icon-4'
+                            },
+                        ]
+                    } only %}
+                </div>
+            </div>
+            <div class="choose__picture" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
+                {% include "../components/picture.twig" with {
+                    img: 'images/hero/choose',
+                    w: "670",
+                    h: '616',
+                } only %}
+            </div>
+        </div>
+    </div>
+</section>

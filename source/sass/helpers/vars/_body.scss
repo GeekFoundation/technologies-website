@@ -1,0 +1,18 @@
+// Body
+@mixin vars-body {
+	--body-font-size               : 16px;
+	--body-font-size-mobile        : 14px;
+	--body-font                    : "Cairo","Cairo Fallback", system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+    --second-family                : "Manrope","Manrope Fallback", system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+    --third-family                 : "Inter","Inter Fallback", system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+    --body-line-height             : 150%;
+	--body-line-height-mobile      : 157.143%;
+	--body-color                   : var(--gray-900, #292929);
+    --body-background              : var(--base-white, #ffffff);
+	--body-wrapper                 : calc(1408px + 32px);
+	--body-wrapper-padding-mobile  : 16px;
+	--body-wrapper-padding-tablet  : 16px;
+	--body-wrapper-padding-desktop : 16px;
+}
+
+

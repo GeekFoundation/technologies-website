@@ -1,0 +1,28 @@
+.swiper-virtual .swiper-slide {
+	transform                   : translateZ(0);
+	-webkit-backface-visibility : hidden;
+}
+
+.swiper-virtual.swiper-css-mode {
+	.swiper-wrapper::after {
+		content        : "";
+		position       : absolute;
+		top            : 0;
+		left           : 0;
+		pointer-events : none;
+	}
+}
+
+.swiper-virtual.swiper-css-mode.swiper-horizontal {
+	.swiper-wrapper::after {
+		width  : var(--swiper-virtual-size);
+		height : 1px;
+	}
+}
+
+.swiper-virtual.swiper-css-mode.swiper-vertical {
+	.swiper-wrapper::after {
+		width  : 1px;
+		height : var(--swiper-virtual-size);
+	}
+}

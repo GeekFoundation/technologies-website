@@ -1,0 +1,66 @@
+@at-root {
+	:root {
+		--user-panel-gap           : 0 12px;
+		--user-panel-avatar-size   : 40px;
+		--user-panel-avatar-radius : 50%;
+
+		--user-panel-name-color    : var(--gray-900, #101828);
+		--user-panel-meta-color    : var(--gray-600, #475467);
+		--user-panel-social-margin : 10px 0 0;
+	}
+}
+
+.user-panel {
+	display         : flex;
+	align-items     : flex-start;
+	flex-flow       : row nowrap;
+	justify-content : flex-start;
+	gap             : var(--user-panel-gap);
+}
+
+.user-panel__avatar {
+	flex  : 0 0 auto;
+	width : var(--user-panel-avatar-size);
+
+	img {
+		display       : block;
+		width         : var(--user-panel-avatar-size);
+		height        : var(--user-panel-avatar-size);
+		border-radius : var(--user-panel-avatar-radius);
+		object-fit    : cover;
+	}
+}
+
+.user-panel__main {
+	flex : 1 1 auto;
+
+	&--center {
+		align-self : center;
+	}
+}
+
+.user-panel__name {
+	color : var(--user-panel-name-color);
+	@include text-sm-semibold;
+
+	a {
+		transition      : color .3s var(--easing);
+		text-decoration : none;
+		color           : var(--user-panel-name-color);
+
+		&:hover {
+			text-decoration : underline;
+			color           : var(--link-color-hover);
+		}
+	}
+}
+
+.user-panel__desctiption,
+.user-panel__date {
+	color : var(--user-panel-meta-color);
+	@include text-sm-normal;
+}
+
+.user-panel__social {
+	margin-top : var(--user-panel-social-margin);
+}

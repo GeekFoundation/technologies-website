@@ -1,0 +1,46 @@
+<section class="feedback section" id="contact">
+    <div class="wrapper">
+        <div class="feedback__part">
+            <div class="feedback__desc">
+                <div class="section__name">{{ feedback.section }}</div>
+                <h2 class="section__title">{{ feedback.title }}</h2>
+                <div class="feedback__text">{{ feedback.text }}</div>
+                <div class="feedback__data">
+                    <a href="tel:{{ feedback.phoneLink }}" class="feedback__link">{{ feedback.phone }}</a>
+                    <a href="mailto:{{ feedback.mail }}" class="feedback__link">{{ feedback.mail }}</a>
+                </div>
+            </div>
+            <div class="feedback__block-form" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
+                <div class="feedback__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M16.0347 3.07212L24.8174 8.78087C25.1277 8.98259 25.2829 9.08345 25.3953 9.21799C25.4948 9.33708 25.5696 9.47483 25.6152 9.62318C25.6667 9.79076 25.6667 9.97583 25.6667 10.346V18.8996C25.6667 20.8598 25.6667 21.8399 25.2852 22.5886C24.9497 23.2472 24.4142 23.7826 23.7557 24.1181C23.007 24.4996 22.0269 24.4996 20.0667 24.4996H7.93337C5.97319 24.4996 4.9931 24.4996 4.24441 24.1181C3.58584 23.7826 3.05041 23.2472 2.71485 22.5886C2.33337 21.8399 2.33337 20.8598 2.33337 18.8996V10.346C2.33337 9.97583 2.33337 9.79076 2.38491 9.62318C2.43052 9.47483 2.50528 9.33708 2.6048 9.21799C2.71722 9.08345 2.87239 8.98259 3.18273 8.78087L11.9654 3.07212M16.0347 3.07212C15.2982 2.59343 14.93 2.35408 14.5332 2.26096C14.1825 2.17864 13.8175 2.17864 13.4668 2.26096C13.0701 2.35408 12.7019 2.59343 11.9654 3.07212M16.0347 3.07212L23.2589 7.76786C24.0614 8.28947 24.4626 8.55028 24.6016 8.88103C24.723 9.17007 24.723 9.49583 24.6016 9.78487C24.4626 10.1156 24.0614 10.3764 23.2589 10.898L16.0347 15.5938C15.2982 16.0725 14.93 16.3118 14.5332 16.4049C14.1825 16.4873 13.8175 16.4873 13.4668 16.4049C13.0701 16.3118 12.7019 16.0725 11.9654 15.5938L4.74121 10.898C3.93872 10.3764 3.53748 10.1156 3.39851 9.78487C3.27706 9.49583 3.27706 9.17007 3.39851 8.88103C3.53748 8.55028 3.93872 8.28947 4.74121 7.76786L11.9654 3.07212M25.0834 22.1663L17.3334 15.1663M10.6667 15.1663L2.91671 22.1663" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="feedback__form-name">{{ feedback.formName }}</div>
+                <div class="feedback__form-text">{{ feedback.formText }}</div>
+                <form action="#" class="feedback__form">
+                    <div class="form-grid">
+                        <div class="form-grid__item">
+                            <div class="form-grid__input">
+                                <input name="name" id="name" type="text" class="input-style" placeholder="{{ feedback.fieldName }}" required="">
+                            </div>
+                        </div>
+                        <div class="form-grid__item">
+                            <div class="form-grid__input">
+                                <input name="email" id="email" type="email" class="input-style" placeholder="{{ feedback.fieldEmail }}" required="">
+                            </div>
+                        </div>
+                        <div class="form-grid__item form-grid__item--line">
+                                <label class="checkbox-style">
+                                    <input type="checkbox" name="rules" value="1" aria-invalid="false">
+                                    <span class="checkbox-style__wrapper wpcf7-list-item-label"><span>{{ feedback.rules }}</span>
+                                </span>
+                                </label>
+                            <button class="b-btn b-btn--primary" type="submit"><span>{{ feedback.btn }}</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

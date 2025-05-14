@@ -1,0 +1,28 @@
+// Typography
+@mixin vars-typography() {
+	// Table
+	--table-header-font-weight : 700;
+	--table-cell-padding       : 5px 10px;
+
+	// Text
+	--heading-font-weight      : 600;
+	--heading-line-height      : 1;
+	--heading-margin           : 1em 0;
+	--paragraph-margin         : 1em 0;
+	--list-margin              : 1em 0;
+	--bold-font-weight         : 700;
+	--text-small               : 14px;
+
+	--link-color               : var(--primary-800);
+	--link-color-hover         : var(--primary-900);
+
+	--hr-size                  : 32px 0;
+
+	--blockquote-color         : var(--gray-600);
+
+	--easing                   : cubic-bezier(.02, .01, .47, 1);
+
+	--border-color             : var(--gray-200);
+	--border-radius            : 4px;
+	--border-radius-small      : 2px;
+}

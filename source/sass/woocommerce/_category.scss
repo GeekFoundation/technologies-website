@@ -1,0 +1,162 @@
+@at-root {
+	:root {
+		--woocommerce-category-page-margin-mobile     : 32px auto 0;
+		--woocommerce-category-page-margin-tablet     : 44px auto 0;
+		--woocommerce-category-page-margin-desktop    : 44px auto 0;
+
+		--woocommerce-category-box-padding-mobile     : 0;
+		--woocommerce-category-box-padding-tablet     : 0;
+		--woocommerce-category-box-padding-desktop    : 0;
+		--woocommerce-category-box-border             : none;
+		--woocommerce-category-box-transition         : none;
+		--woocommerce-category-box-background         : none;
+		--woocommerce-category-box-radius             : none;
+		--woocommerce-category-box-shadow             : none;
+		--woocommerce-category-box-shadow-hover       : none;
+
+		--woocommerce-category-image-padding-mobile   : 0;
+		--woocommerce-category-image-padding-tablet   : 0;
+		--woocommerce-category-image-padding-desktop  : 0;
+		--woocommerce-category-image-radius           : var(--woocommerce-items-image-radius);
+		--woocommerce-category-image-background       : var(--woocommerce-items-image-background);
+		--woocommerce-category-image-min-height       : var(--woocommerce-items-image-min-height);
+		--woocommerce-category-image-max-height       : var(--woocommerce-items-image-max-height);
+		--woocommerce-category-image-offeset-mobile   : var(--woocommerce-items-image-offeset-mobile);
+		--woocommerce-category-image-offeset-tablet   : var(--woocommerce-items-image-offeset-tablet);
+		--woocommerce-category-image-offeset-desktop  : var(--woocommerce-items-image-offeset-desktop);
+		--woocommerce-category-image-hover-transition : var(--woocommerce-items-image-hover-transition);
+		--woocommerce-category-image-hover-size       : var(--woocommerce-items-image-hover-size);
+
+		--woocommerce-category-title-color            : var(--primary-800);
+		--woocommerce-category-title-gap-mobile       : 4px 8px;
+		--woocommerce-category-title-gap-tablet       : 4px 8px;
+		--woocommerce-category-title-gap-desktop      : 4px 8px;
+		--woocommerce-category-title-padding-mobile   : 12px 0 0;
+		--woocommerce-category-title-padding-tablet   : 20px 0 0;
+		--woocommerce-category-title-padding-desktop  : 20px 0 0;
+
+		--woocommerce-category-description-color      : var(--gray-800);
+	}
+}
+
+.woocommerce-page__category {
+	margin : var(--woocommerce-category-page-margin-mobile);
+	@media screen and (min-width : $break-table) {
+		margin : var(--woocommerce-category-page-margin-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--woocommerce-category-page-margin-desktop);
+	}
+}
+
+.woocommerce-loop-category__box {
+	position         : relative;
+	display          : flex;
+	align-items      : stretch;
+	flex-flow        : column nowrap;
+	justify-content  : flex-start;
+	box-sizing       : border-box;
+	height           : 100%;
+	padding          : var(--woocommerce-category-box-padding-mobile);
+	transition       : var(--woocommerce-category-box-transition);
+	text-decoration  : none;
+	border           : var(--woocommerce-category-box-border);
+	border-radius    : var(--woocommerce-category-box-radius);
+	background-color : var(--woocommerce-category-box-background);
+	box-shadow       : var(--woocommerce-category-box-shadow);
+	@media screen and (min-width : $break-table) {
+		padding : var(--woocommerce-category-box-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--woocommerce-category-box-padding-desktop);
+	}
+
+	&:hover {
+		box-shadow : var(--woocommerce-category-box-shadow-hover);
+
+		.woocommerce-loop-category__image {
+			&::after {
+				height : var(--woocommerce-category-image-hover-size);
+			}
+		}
+	}
+}
+
+.woocommerce-loop-category__image {
+	position : relative;
+	padding  : var(--woocommerce-category-image-padding-mobile);
+	@media screen and (min-width : $break-table) {
+		padding : var(--woocommerce-category-image-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--woocommerce-category-image-padding-desktop);
+	}
+
+	&::after {
+		content     : "";
+		position    : absolute;
+		right       : 0;
+		bottom      : 0;
+		left        : 0;
+		box-sizing  : border-box;
+		height      : 100%;
+		transition  : var(--woocommerce-category-image-hover-transition);
+		background  : var(--woocommerce-category-image-background);
+		will-change : height;
+	}
+
+	img {
+		position       : relative;
+		z-index        : 10;
+		box-sizing     : border-box;
+		width          : 100%;
+		height         : var(--woocommerce-category-image-min-height);
+		padding        : var(--woocommerce-category-image-offeset-mobile);
+		vertical-align : top;
+		border-radius  : var(--woocommerce-category-image-radius);
+		object-fit     : contain;
+
+		@media screen and (min-width : $break-table) {
+			padding : var(--woocommerce-category-image-offeset-tablet);
+		}
+		@media screen and (min-width : $break-desktop) {
+			padding : var(--woocommerce-category-image-offeset-desktop);
+		}
+
+		@media (min-width : $break-table) {
+			height : calc(var(--woocommerce-category-image-min-height) + ((var(--woocommerce-category-image-max-height) - var(--woocommerce-category-image-min-height)) * (100vw - $break-table) / $break-table));
+		}
+		@media (min-width : $product-breakpoint) {
+			height : var(--woocommerce-category-image-max-height);
+		}
+	}
+}
+
+.woocommerce-loop-category__title {
+	@include text-md-normal;
+	display         : flex;
+	align-items     : center;
+	flex-flow       : row nowrap;
+	justify-content : flex-start;
+	margin-top      : auto;
+	padding         : var(--woocommerce-category-title-padding-mobile);
+	color           : var(--woocommerce-category-title-color);
+	gap             : var(--woocommerce-category-title-gap-mobile);
+	@media screen and (min-width : $break-table) {
+		padding : var(--woocommerce-category-title-padding-tablet);
+		gap     : var(--woocommerce-category-title-gap-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--woocommerce-category-title-padding-desktop);
+		gap     : var(--woocommerce-category-title-gap-desktop);
+	}
+
+	mark.count {
+		@extend .b-badges;
+	}
+}
+
+.woocommerce-loop-category__description {
+	@include text-sm-normal;
+	color : var(--woocommerce-category-description-color);
+}

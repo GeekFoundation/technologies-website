@@ -1,0 +1,93 @@
+@at-root {
+	:root {
+		--error-page-gap                  : 24px;
+		--error-page-image-margin         : 0 0 32px;
+		--error-page-image-size           : 280px;
+
+		--error-page-title-color          : var(--primary-700, #6941C6);
+		--error-page-title-margin-mobile  : 0 0 12px;
+		--error-page-title-margin-tablet  : 0 0 12px;
+		--error-page-title-margin-desktop : 0 0 12px;
+
+		--error-page-subtitle-color       : var(--gray-900, #101828);
+
+		--error-page-desc-color           : var(--gray-600, #475467);
+		--error-page-desc-width           : 480px;
+		--error-page-desc-margin-mobile   : 24px 0 0;
+		--error-page-desc-margin-table    : 24px 0 0;
+		--error-page-desc-margin-desktop  : 24px 0 0;
+	}
+}
+
+.error-404 {
+	@media screen and (min-width : $break-desktop) {
+		display         : flex;
+		align-items     : center;
+		flex-flow       : row nowrap;
+		justify-content : space-between;
+		gap             : var(--error-page-gap);
+	}
+}
+
+.error-404__image {
+	margin-bottom : var(--error-page-image-margin);
+
+	img {
+		max-width      : var(--error-page-size);
+		vertical-align : top;
+	}
+
+	@media screen and (min-width : $break-desktop) {
+		order         : 1;
+		margin-bottom : 0;
+		img {
+			max-width : 100%;
+		}
+	}
+}
+
+.error-404__main {
+	order : 0;
+}
+
+.error-404__title {
+	@include text-md-semibold;
+	margin : var(--error-page-title-margin-mobile);
+	color  : var(--error-page-title-color);
+	@media screen and (min-width : $break-table) {
+		margin : var(--error-page-title-margin-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--error-page-title-margin-desktop);
+	}
+}
+
+.error-404__subtitle {
+	@include display-xs-semibold;
+	color : var(--error-page-subtitle-color);
+	@media screen and (min-width : $break-table) {
+		@include display-sm-semibold;
+	}
+	@media screen and (min-width : $break-desktop) {
+		@include display-md-semibold;
+	}
+}
+
+.error-404__desc {
+	@include text-lg-normal;
+	max-width : var(--error-page-desc-width);
+	margin    : var(--error-page-desc-margin-mobile);
+	color     : var(--error-page-desc-color);
+	@media screen and (min-width : $break-table) {
+		margin : var(--error-page-desc-margin-table);
+	}
+	@media screen and (min-width : $break-desktop) {
+		margin : var(--error-page-desc-margin-desktop);
+		@include text-xl-normal;
+	}
+}
+
+.error-404__form {
+	max-width : var(--error-page-desc-width);
+	@extend .no-results__form;
+}

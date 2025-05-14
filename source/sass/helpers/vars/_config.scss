@@ -1,0 +1,7 @@
+@mixin vars-config {
+	--aside-section-margin       : 20px;
+	--aside-section-row-margin   : 20px;
+
+	--aside-section-title-margin : 0 0 8px;
+	--aside-section-title-color  : var(--primary-700, #6941C6);
+}

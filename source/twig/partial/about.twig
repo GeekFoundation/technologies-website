@@ -1,0 +1,21 @@
+<section class="about section" id="about">
+    <div class="wrapper">
+        <div class="section__name">{{ about.section }}</div>
+        <div class="about__part">
+            <div class="about__desc">
+                <h2 class="section__title">{{ about.title }}</h2>
+                <h3 class="section__subtitle section__subtitle--large">{{ about.subtitle }}</h3>
+                <div class="about__text">
+                    {{ about.text }}
+                </div>
+            </div>
+            <div class="about__picture" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
+                {% include "../components/picture-png.twig" with {
+                    img: 'images/hero/about',
+                    w: "683",
+                    h: '559',
+                } only %}
+            </div>
+        </div>
+    </div>
+</section>

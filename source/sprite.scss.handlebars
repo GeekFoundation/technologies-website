@@ -1,0 +1,14 @@
+{{#shapes}}{{#selector.shape}}@mixin svg-{{expression}}(){{^last}},
+{{/last}}{{/selector.shape}} {
+	background: url('../{{{sprite}}}?v{{now}}') {{position.relative.xy}} no-repeat;
+	width: {{width.outer}}px;
+	height: {{height.outer}}px;
+	display: inline-block;
+}
+{{/shapes}}
+
+{{#shapes}}{{#selector.shape}}.icon-{{expression}}{{^last}},
+{{/last}}{{/selector.shape}} {
+	{{#selector.shape}}@include svg-{{expression}}(){{^last}},{{/last}}{{/selector.shape}}
+}
+{{/shapes}}

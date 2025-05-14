@@ -1,0 +1,168 @@
+{
+    "header": {
+        "logo": "Geek Technologies",
+        "menu": [
+            {
+                "item": "About"
+            },
+            {
+                "item": "Services"
+            },
+            {
+                "item": "Contact"
+            }
+        ],
+        "langLink": "index.html",
+        "lang": "اللغة العربية",
+        "langIcon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>    <path d='M12.913 17H20.087M12.913 17L11 21M12.913 17L15.7783 11.009C16.0092 10.5263 16.1246 10.2849 16.2826 10.2086C16.4199 10.1423 16.5801 10.1423 16.7174 10.2086C16.8754 10.2849 16.9908 10.5263 17.2217 11.009L20.087 17M20.087 17L22 21M2 5H8M8 5H11.5M8 5V3M11.5 5H14M11.5 5C11.0039 7.95729 9.85259 10.6362 8.16555 12.8844M10 14C9.38747 13.7248 8.76265 13.3421 8.16555 12.8844M8.16555 12.8844C6.81302 11.8478 5.60276 10.4266 5 9M8.16555 12.8844C6.56086 15.0229 4.47143 16.7718 2 18' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+    },
+    "hero" : {
+        "subtitle": "Innovating Technologies, Empowering Businesses",
+        "title": "Welcome to Geek Technologies",
+        "titleDesc": "Our Mission",
+        "text": "Excellence in Technology Solutions and Software Development.",
+        "btn": "Read more"
+    },
+    "about": {
+        "section": "Tell Our Story — 01",
+        "title": "About Us",
+        "subtitle": "At Geek Technologies, we specialize in delivering cutting-edge solutions tailored to the needs of business and financial institutions, enterprises, and organizations seeking to optimize their infrastructure. ",
+        "text": "<p>With expertise spanning financial software development, security audits, and consultancy, we are your trusted partner in navigating the complexities of the modern financial ecosystem.</p><p>We aim to empower businesses by providing bespoke services that blend advanced technology with deep industry knowledge. Whether you are looking to develop sophisticated financial software, secure your digital assets, or optimize operational efficiency, our team delivers exceptional results that drive success.</p>"
+    },
+    "offer": {
+        "section": "Services — 02",
+        "title": "What We Offer",
+        "list": [
+            {
+                "title": "Financial Software Development",
+                "text": "Our expertise in financial technology empowers banks, funds, and fintech companies with tailored accounting software and integrations for cryptocurrencies. From custom accounting systems to DeFi and DEX integration, we deliver scalable, innovative solutions to modernize your operations."
+            },
+            {
+                "title": "Infrastructure Audits",
+                "text": "Protect your business with our comprehensive security services. We conduct infrastructure-wide audits, ensure application-layer security, verify smart contract integrity, and assist with PCI DSS certification, safeguarding your systems against vulnerabilities."
+            },
+            {
+                "title": "Consultancy",
+                "text": "Leverage our hands-on expertise in DevOps, cost optimization, and infrastructure management. We provide practical solutions tailored to your unique challenges, available through flexible engagement models like hourly services or monthly subscriptions."
+            }
+        ]
+    },
+    "choose": {
+        "section": "Why Us?  — 03",
+        "title": "Why Choose Us?",
+        "list": [
+            {
+                "title": "Deep Expertise",
+                "text": "Our team comprises specialists with a proven track record in financial software, blockchain, and cybersecurity."
+            },
+            {
+                "title": "Tailored Solutions",
+                "text": " Every service we offer is customized to meet your specific business needs.\u2028\u2028"
+            },
+            {
+                "title": "Holistic Approach",
+                "text": "We go beyond isolated problem-solving to deliver end-to-end solutions that drive lasting value."
+            },
+            {
+                "title": "Commitment to Quality",
+                "text": "We pride ourselves on adhering to the highest industry standards and exceeding client expectations."
+            }
+        ]
+    },
+    "feedback": {
+        "section": "Contact — 04",
+        "title": "Your Success, Secured",
+        "text": "At Geek Technologies, we are not just service providers—we are your strategic partners. Let us help you innovate, secure, and grow in a rapidly evolving financial and technological landscape.",
+        "phone": "+1 (123) 456-7890",
+        "phoneLink": "+11234567890",
+        "mail": "fishmail@gmail.com",
+        "formName": "Ready to Elevate <br>Your Business?",
+        "formText": "Get in touch with us today to explore how our services can unlock new opportunities for your organization.",
+        "fieldName": "Name",
+        "fieldEmail": "Email",
+        "rules": "I Agree to <a href='privacy.html' target='_blank'>Privacy Policy</a>",
+        "btn": "Send"
+    },
+    "footer": {
+        "coop": "Geek Technologie 2025 ©",
+        "privacy": "Privacy Policy",
+        "made": "Made by Rhino Digital "
+    },
+    "dev": {
+        "title": "Financial Software Development",
+        "subtitle": "Empowering Financial Institutions with Tailored Software Solutions",
+        "text": "We specialize in designing and developing robust accounting and financial software for banks, investment funds, and fintech companies. Our solutions are crafted to meet the unique demands of the financial sector, ensuring compliance, scalability, and efficiency.",
+        "listTitle": "Core Services",
+        "list": [
+            {
+                "title": "Custom Accounting Systems",
+                "text": "Development of bespoke accounting platforms that align with your operational workflows and regulatory requirements.\u200B"
+            },
+            {
+                "title": "Cryptocurrency Integration",
+                "text": "Seamless incorporation of digital assets into your financial systems, including support for various cryptocurrencies.\u200B"
+            },
+            {
+                "title": "DeFi and DEX Connectivity",
+                "text": "Integration with decentralized finance protocols and decentralized exchanges to enhance liquidity and broaden financial operations.\u200B"
+            },
+            {
+                "title": "Real-Time Data Scanners",
+                "text": "Implementation of tools that provide real-time monitoring of financial markets, aiding in swift decision-making.​"
+            }
+        ],
+        "blockTitle": "Why Choose Us?",
+        "blockText": "Our team combines deep financial industry knowledge with cutting-edge technology expertise. We ensure that our software solutions not only meet current industry standards but are also adaptable to future technological advancements.",
+        "btn": "Contact"
+    },
+    "audits": {
+        "title": "Infrastructure Audits",
+        "subtitle": "Comprehensive Infrastructure Assessments for Financial Systems",
+        "text": "Security is paramount in the financial industry. Our audit services are designed to identify and mitigate risks across your entire infrastructure, from internal policies to application layers.\u200B",
+        "listTitle": "Audit Services",
+        "list": [
+            {
+                "title": "Infrastructure Audits",
+                "text": "Evaluation of virtual servers, network configurations, and security protocols to ensure a robust defense against threats."
+            },
+            {
+                "title": "Application Layer Audits",
+                "text": "In-depth analysis of your software applications to detect vulnerabilities and ensure secure operations.\u200B"
+            },
+            {
+                "title": "Smart Contract Audits",
+                "text": "Thorough examination of blockchain-based smart contracts to identify and rectify potential security flaws.\u200B"
+            },
+            {
+                "title": "PCI DSS Compliance",
+                "text": "Assistance in achieving Payment Card Industry Data Security Standard certification through meticulous internal and external audits.\u200B"
+            }
+        ],
+        "blockTitle": "Our Approach",
+        "blockText": "We adopt a holistic auditing methodology, ensuring that every component of your financial system is scrutinized. Our goal is to provide you with actionable insights that fortify your security posture and maintain compliance with industry regulations.\u200B",
+        "btn": "Contact"
+    },
+    "consultancy": {
+        "title": "Consultancy",
+        "subtitle": "Expert Guidance to Optimize Financial IT Operations",
+        "text": "Our consultancy services are tailored to address specific challenges within your organization, particularly in the realm of DevOps and infrastructure management.\u200B",
+        "listTitle": "Consultancy Offerings",
+        "list": [
+            {
+                "title": "DevOps Expertise",
+                "text": "Implementation of best practices to streamline development and operations, enhancing efficiency and reducing time-to-market.\u200B"
+            },
+            {
+                "title": "Infrastructure Cost Optimization",
+                "text": "Analysis and restructuring of your IT infrastructure to reduce costs without compromising performance.\u200B"
+            },
+            {
+                "title": "On-Site Problem Solving",
+                "text": "Deployment of our experts to your location to address and resolve specific technical issues promptly.\u200B"
+            }
+        ],
+        "blockTitle": "Flexible Engagement Models",
+        "blockText": "We offer our consultancy services on an hourly basis or through monthly subscriptions, providing flexibility to meet your organization's needs and budget.\u200B",
+        "btn": "Contact"
+    }
+}

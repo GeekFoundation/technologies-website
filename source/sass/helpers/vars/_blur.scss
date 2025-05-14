@@ -1,0 +1,7 @@
+// Blur
+@mixin vars-blur() {
+	--blur-sm                                   : 8px;
+	--blur-md                                   : 16px;
+	--blur-lg                                   : 24px;
+	--blur-xl                                   : 40px;
+}

@@ -1,0 +1,17 @@
+@at-root {
+	:root {
+		--woocommerce-product-title-color       : var(--gray-600);
+		--woocommerce-product-description-color : var(--gray-600);
+	}
+}
+
+.woocommerce-product-description__title {
+	@include text-lg-medium;
+	color : var(--woocommerce-product-title-color);
+}
+
+.woocommerce-product-description {
+	@include text-md-normal;
+	color : var(--woocommerce-product-description-color);
+}
+

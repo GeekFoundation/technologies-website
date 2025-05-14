@@ -1,0 +1,20 @@
+@at-root {
+	:root {
+		--blog-grid-gap-mobile  : 48px 32px;
+		--blog-grid-gap-table   : 48px 32px;
+		--blog-grid-gap-desktop : 48px 32px;
+		--blog-grid-minmax      : 320px;
+	}
+}
+
+.blog-grid {
+	display               : grid;
+	gap                   : var(--blog-grid-gap-mobile);
+	grid-template-columns : repeat(auto-fit, minmax(var(--blog-grid-minmax), 1fr));
+	@media screen and (min-width : $break-table) {
+		gap : var(--blog-grid-gap-table);
+	}
+	@media screen and (min-width : $break-desktop) {
+		gap : var(--blog-grid-gap-desktop);
+	}
+}

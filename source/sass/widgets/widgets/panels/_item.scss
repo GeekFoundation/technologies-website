@@ -1,0 +1,132 @@
+@at-root {
+	:root {
+		--widget-panels-item-padding-mobile        : 24px;
+		--widget-panels-item-padding-tablet        : 24px;
+		--widget-panels-item-padding-desktop       : 24px;
+
+		--widget-panels-item-background            : var(--primary-600);
+		--widget-panels-item-color                 : var(--base-white);
+
+		--widget-panels-item-inner-padding-mobile  : 24px;
+		--widget-panels-item-inner-padding-tablet  : 24px;
+		--widget-panels-item-inner-padding-desktop : 24px;
+		--widget-panels-item-inner-border          : rgba(255, 255, 255, 0.50);
+		--widget-panels-item-inner-background      : rgba(255, 255, 255, 0.30);
+
+		--widget-panels-item-height-mobile         : 472px;
+		--widget-panels-item-height-tablet         : 472px;
+		--widget-panels-item-height-desktop        : 504px;
+	}
+}
+
+.widget-panels-item {
+	position            : relative;
+	display             : flex;
+	align-items         : stretch;
+	flex-flow           : column nowrap;
+	justify-content     : flex-start;
+	box-sizing          : border-box;
+	height              : 100%;
+	min-height          : var(--widget-panels-item-height-mobile);
+	padding             : var(--widget-panels-item-padding-mobile);
+	color               : var(--widget-panels-item-color);
+	background-color    : var(--widget-panels-item-background);
+	background-position : 50% 0;
+	background-size     : cover;
+	@media screen and (min-width : $break-table) {
+		min-height : var(--widget-panels-item-height-tablet);
+		padding    : var(--widget-panels-item-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		min-height : var(--widget-panels-item-height-desktop);
+		padding    : var(--widget-panels-item-padding-desktop);
+	}
+}
+
+.widget-panels-item__image {
+	position       : relative;
+	z-index        : 10;
+	margin-bottom  : auto;
+	padding-bottom : 24px;
+
+	img {
+		width           : var(--widget-panels-item-image-width);
+		height          : var(--widget-panels-item-image-height);
+		vertical-align  : top;
+		background-size : contain;
+	}
+}
+
+.widget-panels-item__main {
+	position        : relative;
+	z-index         : 10;
+	padding         : var(--widget-panels-item-inner-padding-mobile);
+	border          : 1px solid var(--widget-panels-item-inner-border);
+	background      : var(--widget-panels-item-inner-background);
+	backdrop-filter : blur(12px);
+	@media screen and (min-width : $break-table) {
+		padding : var(--widget-panels-item-inner-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--widget-panels-item-inner-padding-desktop);
+	}
+}
+
+.widget-panels-item__title {
+	@include display-xs-semibold;
+	margin : 0;
+	@media screen and (min-width : $break-desktop) {
+		@include display-sm-semibold;
+	}
+}
+
+.widget-panels-item__description {
+	@include text-md-medium;
+	margin-top : 12px;
+	@media screen and (min-width : $break-table) {
+		@include text-lg-medium;
+		margin-top : 18px;
+	}
+}
+
+.widget-panels-item__link {
+	margin-top : 24px;
+	@media screen and (min-width : $break-table) {
+		margin-top : 32px;
+	}
+
+	a {
+		transition : opacity .3s ease;
+		color      : var(--widget-panels-item-color);
+
+		&:active,
+		&:focus-within,
+		&:hover {
+			opacity : .7;
+			color   : var(--widget-panels-item-color);
+		}
+	}
+}
+
+.widget-panels-item__background {
+	position : absolute;
+	z-index  : 1;
+	top      : 0;
+	right    : 0;
+	bottom   : 0;
+	left     : 0;
+
+	picture {
+		display : block;
+	}
+
+	img {
+		position        : absolute;
+		top             : 0;
+		left            : 0;
+		width           : 100%;
+		height          : 100%;
+		object-fit      : cover;
+		object-position : 50% 0;
+	}
+}

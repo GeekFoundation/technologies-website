@@ -1,0 +1,17 @@
+.widget-partners__grid {
+	display               : grid;
+	align-items           : center;
+	justify-content       : space-between;
+	gap                   : 24px 24px;
+	grid-template-columns : repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.widget-partners__item {
+	text-align : center;
+
+	img {
+		width           : auto;
+		vertical-align  : top;
+		background-size : contain;
+	}
+}

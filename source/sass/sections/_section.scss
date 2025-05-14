@@ -1,0 +1,85 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    @media screen and (min-width : $break-desktop) {
+        min-height: 100vh;
+    }
+}
+.footer {
+    margin-top: auto;
+}
+.panel-grid,
+body .panel-layout .so-panel {
+    padding: 0;
+}
+.section {
+    padding : 32px 0;
+    margin: 0;
+    @media screen and (min-width : $break-table) {
+        padding : 60px 0;
+    }
+    @media screen and (min-width : $break-desktop) {
+        padding : 80px 0;
+    }
+
+    //&:first-child {
+    //    padding-top : 0;
+    //}
+    //
+    //&:last-child {
+    //    padding-bottom : 0;
+    //}
+}
+
+
+
+.widget-title,
+.section__title,
+.section__head {
+    @include display-lg-medium;
+    margin: 0 0 24px;
+
+    @media screen and (min-width : $break-table) {
+        @include display-xl-medium;
+        margin-bottom: 40px;
+
+        &--main {
+            @include display-2-xl-medium;
+            margin-bottom: 24px;
+        }
+
+    }
+}
+
+.section__subtitle {
+    @include text-md-medium;
+    margin: 0 0 16px;
+
+    &--large {
+        @include text-lg-medium;
+    }
+
+    @media screen and (min-width : $break-table) {
+        @include display-sm-medium;
+        margin-bottom: 24px;
+
+        &--large {
+            @include display-md-medium;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.section__name {
+    @include text-xs-regular;
+    opacity: 0.6;
+    margin-bottom: 16px;
+    @media screen and (min-width : $break-table) {
+        @include text-md-regular;
+        position : absolute;
+        top: 7px;
+        right: 16px;
+    }
+}
+

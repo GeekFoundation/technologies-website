@@ -1,0 +1,77 @@
+body,
+body .wpc-sorting-form,
+body .wpc-filter-layout-dropdown {
+	// Config
+	.select2-container {
+		--select2-tag-border                      : var(--gray-300, #D0D5DD);
+		--select2-tag-background                  : var(--base-white, #FFF);
+		--select2-tag-radius                      : 6px;
+		--select2-tag-color                       : var(--gray-700, #344054);
+		--select2-tag-padding                     : 2px 6px;
+		--select2-tag-font-size                   : 14px;
+		--select2-tag-font-width                  : 500;
+		--select2-tag-height                      : 32px;
+		--select2-tag-shadow                      : var(--shadow-sm);
+		--select2-tag-gap                         : 4px;
+
+		--select2-dropdown-color                  : var(--gray-700, #344054);
+		--select2-dropdown-disabled-color         : var(--gray-300, #D0D5DD);
+		--select2-dropdown-color-selected         : var(--gray-700, #344054);
+		--select2-dropdown-background-selected    : var(--gray-50, #F9FAFB);
+		--select2-dropdown-color-highlighted      : var(--primary-700, #6941C6);
+		--select2-dropdown-background-highlighted : var(--primary-50, #F9F5FF);
+	}
+
+	.select2-container {
+		position       : relative;
+
+		display        : inline-block;
+		box-sizing     : border-box;
+		margin         : 0;
+		vertical-align : middle;
+
+		@import "single";
+		@import "multiple";
+	}
+
+	@import "dropdown";
+
+	.select2-close-mask {
+		position         : fixed;
+		z-index          : 99;
+		top              : 0;
+		left             : 0;
+		display          : block;
+		width            : auto;
+		min-width        : 100%;
+		height           : auto;
+		min-height       : 100%;
+		margin           : 0;
+		padding          : 0;
+		opacity          : 0;
+		border           : 0;
+
+		// styles required for IE to work
+
+		background-color : #FFF;
+		filter           : alpha(opacity=0);
+	}
+
+	.select2-hidden-accessible {
+		position    : absolute !important;
+		overflow    : hidden !important;
+		clip        : rect(0 0 0 0) !important;
+		width       : 1px !important;
+		height      : 1px !important;
+		padding     : 0 !important;
+		white-space : nowrap !important;
+		border      : 0 !important;
+		clip-path   : inset(50%) !important;
+	}
+
+	@import "theme/default/layout";
+}
+
+body:not(.wp-admin) .select2-container--open .select2-dropdown {
+	top : 0 !important;
+}

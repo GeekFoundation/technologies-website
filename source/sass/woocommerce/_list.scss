@@ -1,0 +1,56 @@
+@at-root {
+	:root {
+		--woocommerce-items-gap-mobile  : 24px;
+		--woocommerce-items-gap-tablet  : 32px;
+		--woocommerce-items-gap-desktop : 56px;
+	}
+}
+
+.woocommerce-items {
+	display               : grid;
+	margin                : 0;
+	padding               : 0;
+	list-style            : none;
+	gap                   : var(--woocommerce-items-gap-mobile);
+	grid-template-columns : 1fr;
+	@media screen and (min-width : $break-table) {
+		gap : var(--woocommerce-items-gap-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		gap : var(--woocommerce-items-gap-desktop);
+	}
+
+	&.columns-2 {
+		grid-template-columns : repeat(2, 1fr);
+	}
+
+	&.columns-3 {
+		grid-template-columns : repeat(2, 1fr);
+		@media screen and (min-width : 721px) {
+			grid-template-columns : repeat(3, 1fr);
+		}
+	}
+
+	&.columns-4 {
+		grid-template-columns : repeat(2, 1fr);
+		@media screen and (min-width : 721px) {
+			grid-template-columns : repeat(3, 1fr);
+		}
+		@media screen and (min-width : $break-desktop) {
+			grid-template-columns : repeat(4, 1fr);
+		}
+	}
+
+	&.columns-5 {
+		grid-template-columns : repeat(2, 1fr);
+		@media screen and (min-width : $break-table) {
+			grid-template-columns : repeat(3, 1fr);
+		}
+		@media screen and (min-width : 721px) {
+			grid-template-columns : repeat(4, 1fr);
+		}
+		@media screen and (min-width : $break-desktop) {
+			grid-template-columns : repeat(5, 1fr);
+		}
+	}
+}

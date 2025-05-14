@@ -1,0 +1,57 @@
+@at-root {
+	:root {
+		--woocommerce-header-padding-mobile     : var(--blog-header-padding-mobile);
+		--woocommerce-header-padding-table      : var(--blog-header-padding-table);
+		--woocommerce-header-padding-desktop    : var(--blog-header-padding-desktop);
+		--woocommerce-header-background         : var(--blog-header-background);
+
+		--woocommerce-header-meta-margin        : var(--blog-header-meta-margin);
+		--woocommerce-header-meta-color         : var(--blog-header-meta-color);
+
+		--woocommerce-header-title-margin       : var(--blog-header-title-margin);
+		--woocommerce-header-title-color        : var(--blog-header-title-color);
+
+		--woocommerce-header-description-margin : var(--blog-header-description-margin);
+		--woocommerce-header-description-color  : var(--blog-header-description-color);
+	}
+}
+
+.woocommerce-page-header {
+	padding    : var(--woocommerce-header-padding-mobile);
+	background : var(--woocommerce-header-background);
+	@media screen and (min-width : $break-table) {
+		padding : var(--woocommerce-header-padding-table);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding : var(--woocommerce-header-padding-desktop);
+	}
+}
+
+.woocommerce-page-header__meta {
+	@include text-sm-semibold;
+	margin : var(--woocommerce-header-meta-margin);
+	color  : var(--woocommerce-header-meta-color);
+}
+
+.woocommerce-page-header__title {
+	margin : var(--woocommerce-header-title-margin);
+	color  : var(--woocommerce-header-title-color);
+	@include display-md-semibold;
+	@media screen and (min-width : $break-table) {
+		@include display-lg-semibold;
+	}
+}
+
+.woocommerce-page-header .term-description,
+.woocommerce-page-header .page-description,
+.woocommerce-page-header__description {
+	margin : var(--woocommerce-header-description-margin);
+	color  : var(--woocommerce-header-description-color);
+	@include text-lg-normal;
+	@media screen and (min-width : $break-table) {
+		@include text-xl-normal;
+	}
+	@media screen and (min-width : $break-desktop) {
+
+	}
+}

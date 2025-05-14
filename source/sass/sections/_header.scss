@@ -1,0 +1,222 @@
+
+.header {
+    padding: 16px 0;
+    border-radius: 0 0 24px 24px;
+    border-right: 1px solid var(--gray-100, #DCDCDC);
+    border-bottom: 1px solid var(--gray-100, #DCDCDC);
+    border-left: 1px solid var(--gray-100, #DCDCDC);
+    background: var(--base-white, #FFF);
+    @media screen and (min-width : $break-desktop) {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 33;
+        background-color: transparent;
+        padding: 16px 0;
+        border: none;
+    }
+}
+.header__part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.header__menu {
+    margin-bottom: 45px;
+    @media screen and (min-width : $break-desktop) {
+        margin-bottom: 0;
+    }
+}
+
+.header__icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--gray-iron-900, #30323B);
+    cursor: pointer;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    @media screen and (min-width : $break-table) {
+        width: 64px;
+        height: 64px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    @media screen and (min-width : $break-desktop) {
+        display: none;
+    }
+}
+
+.header__logo {
+    @include text-xl-medium;
+    @media screen and (min-width : $break-table) {
+        @include display-lg-medium;
+    }
+    @media screen and (min-width : $break-desktop) {
+        display: none;
+    }
+}
+.header__panel {
+
+    @media screen and (max-width : $break-desktop-max) {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        width: 100%;
+        height: 100svh;
+        padding: 16px;
+        transition: opacity .3s,transform .5s;
+        opacity: 0;
+        background: var(--gray-900);
+        color: var(--base-white);
+        overflow-y:auto;
+        overflow-x: scroll;
+        max-height: 100vh;
+        -webkit-overflow-scrolling: touch;
+
+        &.is-active {
+            visibility: visible;
+            opacity: 1;
+            z-index: 25;
+        }
+
+        .header__icon {
+            background: var(--base-white, #FFF);
+
+            svg {
+                stroke: var(--gray-900);
+            }
+        }
+    }
+
+    @media screen and (min-width : $break-desktop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 8px;
+        padding: 16px 32px;
+    }
+}
+
+.header__panel-data {
+    margin-top: auto;
+}
+
+.header__panel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header__data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+    @include display-sm-medium;
+
+    @media screen and (min-width : $break-table) {
+        @include display-lg-medium;
+    }
+    @media screen and (min-width : $break-desktop) {
+        display: none;
+    }
+}
+.header__lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    border: 1px solid var(--base-white, #FFF);
+    padding: 6px 16px;
+
+    svg {
+        stroke: var(--gray-900);
+        transition: stroke 0.35s;
+    }
+
+    @media screen and (min-width : $break-desktop) {
+        @include text-md-regular;
+        color: var(--base-white);
+        padding: 4px 16px;
+        transition: background-color 0.35s, color 0.35s;
+
+        svg {
+            stroke: var(--base-white);
+        }
+
+        &:hover {
+            background-color: var(--base-white);
+            color: var(--gray-900);
+
+            svg {
+                stroke: var(--gray-900);
+            }
+        }
+    }
+}
+
+.header__list {
+    padding: 0;
+    margin: 0;
+
+    @media screen and (min-width : $break-desktop) {
+        display: flex;
+        gap: 8px;
+    }
+}
+.header__item {
+    list-style: none;
+    margin-bottom: 16px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @media screen and (min-width : $break-table) {
+        margin-bottom: 32px;
+    }
+    @media screen and (min-width : $break-desktop) {
+        margin-bottom: 0;
+    }
+}
+.header__link {
+    display: block;
+    @include display-md-medium;
+
+    @media screen and (min-width : $break-table) {
+        @include display-xl-medium;
+    }
+
+    @media screen and (min-width : $break-desktop) {
+        padding: 8px 16px;
+        border-radius: 24px;
+        background: var(--opacity-blue-24, rgba(55, 77, 99, 0.24));
+        @include text-md-regular;
+        color: var(--base-white);
+        transition: background-color 0.35s, color 0.35s;
+
+        &:hover {
+            background-color: var(--base-white);
+            color: var(--gray-900);
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@use "sass:math";
+
+.blog-slider {
+	overflow : hidden;
+
+	.swiper {
+		margin : 0 calc(-1 * var(--swiper-gap));
+	}
+
+	.swiper-slide {
+		width  : math.div(100, 1) * 1%;
+		height : auto;
+		@media screen and (min-width : $break-table) {
+			width : math.div(100, 2) * 1%;
+		}
+		@media screen and (min-width : $break-desktop) {
+			width : math.div(100, 4) * 1%;
+		}
+
+		.blog-post {
+			box-sizing : border-box;
+			height     : 100%;
+			padding    : 0 var(--swiper-gap);
+		}
+	}
+
+	&.blog-slider--cols-3 {
+		.swiper-slide {
+			width : math.div(100, 1) * 1%;
+			@media screen and (min-width : $break-table) {
+				width : math.div(100, 2) * 1%;
+			}
+			@media screen and (min-width : $break-desktop) {
+				width : math.div(100, 3) * 1%;
+			}
+		}
+	}
+
+	&.blog-slider--cols-2 {
+		.swiper-slide {
+			width : math.div(100, 1) * 1%;
+			@media screen and (min-width : $break-table) {
+				width : math.div(100, 2) * 1%;
+			}
+			@media screen and (min-width : $break-desktop) {
+				width : math.div(100, 2) * 1%;
+			}
+		}
+	}
+
+	&.blog-slider--cols-1 {
+		.swiper-slide {
+			width : math.div(100, 1) * 1%;
+			@media screen and (min-width : $break-table) {
+				width : math.div(100, 1) * 1%;
+			}
+			@media screen and (min-width : $break-desktop) {
+				width : math.div(100, 1) * 1%;
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+body {
+	.wc-block-components-combobox .wc-block-components-combobox-control input.components-combobox-control__input, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control input.components-combobox-control__input,
+	.wc-block-components-form .wc-block-components-text-input input[type=email], .wc-block-components-form .wc-block-components-text-input input[type=number], .wc-block-components-form .wc-block-components-text-input input[type=tel], .wc-block-components-form .wc-block-components-text-input input[type=text], .wc-block-components-form .wc-block-components-text-input input[type=url], .wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=number], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url] {
+		height  : var(--input-height-2xl);
+		outline : 0 !important;
+		@extend .input-style;
+
+		&:focus {
+			color        : var(--input-color) !important;
+			border-color : var(--input-border-focus) !important;
+			box-shadow   : var(--input-shadow-focus) !important;
+		}
+
+		&[aria-invalid="true"] {
+			color        : var(--input-color-error);
+			border-color : var(--input-border-error);
+
+			&:focus {
+				border-color : var(--input-border-focus-error);
+				box-shadow   : var(--input-shadow-focus-error);
+			}
+		}
+	}
+
+	.wc-block-components-combobox .wc-block-components-combobox-control input.components-combobox-control__input, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control input.components-combobox-control__input {
+		padding : 1.5em .5em .5em;
+	}
+
+	.wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list {
+		margin-top : 61px;
+	}
+
+	.wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list {
+		@include scrollStyle();
+		padding : 4px 0;
+		border  : var(--input-border);
+	}
+
+	.wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion {
+		margin-right : 4px;
+		margin-left  : 4px;
+		@include droppanel-item;
+	}
+
+	.wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion.is-highlighted, .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion:active, .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion:focus, .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion:hover, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion.is-highlighted, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion:active, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion:focus, .wc-block-components-form .wc-block-components-combobox .wc-block-components-combobox-control .components-form-token-field__suggestions-list .components-form-token-field__suggestion:hover {
+		background-color : var(--primary-700);
+	}
+
+	.wc-block-components-checkout-place-order-button,
+	.wc-block-cart__submit-button,
+	.wc-block-components-totals-coupon__button {
+		@extend .b-btn !optional;
+		@extend .b-btn--primary !optional;
+	}
+
+	.wc-block-components-totals-coupon-link {
+		@extend .b-btn !optional;
+		@extend .b-btn--full-size !optional;
+		@extend .b-btn--secondary-grey !optional;
+	}
+
+	.wc-block-components-checkout-place-order-button,
+	.wc-block-cart__submit-button {
+		@extend .b-btn--2xl !optional;
+	}
+
+	.wp-block-button__link {
+		@extend .b-btn !optional;
+		@extend .b-btn--primary !optional;
+	}
+
+	.wc-block-components-checkout-place-order-button,
+	.wc-block-cart__submit-button,
+	.wc-block-components-totals-coupon__button {
+		outline    : 0 !important;
+		box-shadow : var(--btn-shadow) !important;
+
+		&:focus {
+			box-shadow : var(--btn-primary-shadow-active) !important;
+		}
+	}
+
+	.wc-block-components-radio-control .wc-block-components-radio-control__input {
+		border : 2px solid var(--primary-700);
+
+		&:checked::before {
+			background-color : var(--primary-800);
+		}
+	}
+
+	.wc-block-components-order-summary .wc-block-components-order-summary-item__quantity {
+		position : absolute;
+		@extend .b-badges;
+		@extend .b-badges--gray;
+	}
+}

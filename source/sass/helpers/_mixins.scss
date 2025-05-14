@@ -1,0 +1,529 @@
+@use "sass:math";
+
+// Retina image
+@mixin image-2x() {
+	@media (min--moz-device-pixel-ratio : 1.5),
+	(-webkit-min-device-pixel-ratio : 1.5),
+	(min-device-pixel-ratio : 1.5),
+	(min-resolution : 1.5dppx) {
+		@content;
+	}
+}
+
+@mixin hide-text() {
+	color       : transparent;
+	font        : 0/0 a;
+	text-shadow : none;
+}
+
+@mixin hide-seo() {
+	border      : 0;
+	clip        : rect(0 0 0 0);
+	clip-path   : polygon(0px 0px, 0px 0px, 0px 0px);
+	height      : 1px;
+	margin      : -1px;
+	overflow    : hidden;
+	padding     : 0;
+	position    : absolute;
+	width       : 1px;
+	white-space : nowrap;
+}
+
+$flexbox-grid-mixins-grid-type  : margin-offset !default;
+$flexbox-grid-mixins-box-sizing : border-box !default;
+$flexbox-grid-mixins-stack      : margin-bottom !default;
+
+@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: true, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null) {
+	@if type-of($col) == number and unitless($col) == true {
+		$flex-shrink : 0;
+		$flex-basis  : percentage(math.div($col, $grid-columns));
+
+		@if $flexbox-grid-mixins-grid-type == skeleton {
+			@if $gutter and unit($gutter) == "%" {
+				$flex-basis : $flex-basis - $gutter;
+			} @else if $gutter and unitless($gutter) == false {
+				$flex-basis : calc(#{$flex-basis} - #{$gutter});
+			}
+
+		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
+			@if $gutter and unit($gutter) == "%" {
+				$flex-basis : (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
+			} @else if $gutter and unitless($gutter) == false {
+				$flex-basis : calc(#{$flex-basis} - #{$gutter * ($grid-columns / $col - 1) / ($grid-columns / $col)});
+			}
+		}
+
+		@if $col-offset and unit($col-offset) == "%" {
+			$flex-basis : $flex-basis + $col-offset;
+		} @else if $col-offset and unitless($col-offset) == false {
+			$flex-basis : calc(#{$flex-basis} + #{$col-offset});
+		}
+	} @else if type-of($col) == number and unitless($col) == false {
+		$flex-grow   : 0;
+		$flex-shrink : 0;
+		$flex-basis  : $col;
+	} @else if type-of($col) == string and $col == "auto" {
+		// flex: auto;
+		$flex-grow   : 1;
+		$flex-shrink : 1;
+		$flex-basis  : auto;
+	} @else if type-of($col) == string and $col == "equal" {
+		// flex: 1;
+		$flex-grow   : 1;
+		$flex-shrink : 1;
+		$flex-basis  : 0;
+	} @else if type-of($col) == string and $col == "none" {
+		// flex: none;
+		$flex-grow   : 0;
+		$flex-shrink : 0;
+		$flex-basis  : auto;
+	} @else if type-of($col) == string and $col == "initial" {
+		// flex: initial;
+		$flex-grow   : 0;
+		$flex-shrink : 1;
+		$flex-basis  : auto;
+	} @else if type-of($col) == string and $col == "positive" {
+		// positive number
+		@if $flex-grow == 0 {
+			$flex-grow : 1;
+		}
+		$flex-shrink : 0;
+		$flex-basis  : 0;
+	}
+
+	@if type-of($shorthand) == bool and $shorthand == true {
+		flex        : $flex-grow $flex-shrink $flex-basis;
+	} @else {
+		flex-basis  : $flex-basis;
+		flex-grow   : $flex-grow;
+		flex-shrink : $flex-shrink;
+	}
+
+	@if $align-self != null {
+		align-self : $align-self;
+	}
+
+	@if type-of($order) == number {
+		order : $order;
+	}
+
+	@if type-of($width) == bool and $width == true {
+		width : $flex-basis;
+	} @else if type-of($width) == number and unitless($width) == false {
+		width : $width;
+	} @else if type-of($width) == string and $width == "auto" {
+		width : auto;
+	}
+
+	@content;
+}
+
+@mixin scrollStyle($direction-horizontal: false, $background : transparent, $margin : 0, $lock : true) {
+	-webkit-overflow-scrolling : touch;
+	scrollbar-width            : thin;
+	overflow-y                 : auto;
+	overflow-y                 : overlay;
+	overflow-x                 : hidden;
+
+	@if $lock {
+		overscroll-behavior : contain;
+	}
+
+
+	&::-webkit-scrollbar-track {
+		border-radius : 10px;
+		background    : $background;
+		margin        : $margin;
+	}
+
+	&::-webkit-scrollbar {
+		background : transparent;
+		@if $direction-horizontal {
+			height      : 3px;
+		} @else {
+			width       : 3px;
+			transition  : width .3s ease;
+			will-change : width;
+			@media screen and (min-width : $break-table) {
+				width : 4px;
+			}
+			@media screen and (min-width : $break-desktop) {
+				&:hover {
+					width : 10px;
+				}
+			}
+		}
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border           : none;
+		border-radius    : 10px;
+		background-color : var(--primary-600);
+
+		&:active,
+		&:hover {
+			background-color : var(--primary-800);
+		}
+	}
+	&::-webkit-scrollbar-corner {
+		border-radius    : 10px;
+		background-color : var(--primary-600);
+
+		&:active,
+		&:hover {
+			background-color : var(--primary-800);
+		}
+	}
+
+	.overflowscrolling & {
+		overflow-y : scroll;
+	}
+}
+
+@mixin droppanel-item {
+    @include text-md-medium;
+    padding          : var(--droppanel-item-padding);
+    color            : var(--droppanel-item-color);
+    background-color : var(--droppanel-item-background);
+    border-radius    : var(--droppanel-item-radius);
+    transition       : var(--droppanel-item-transition);
+}
+
+@mixin droppanel-item-hover-active {
+    color      : var(--droppanel-item-hover-color);
+    background : var(--droppanel-item-hover-background);
+}
+
+
+@mixin tag-list($wrap:wrap) {
+    display         : flex;
+    flex-flow       : row $wrap;
+    justify-content : flex-start;
+    align-items     : stretch;
+    gap             : 4px 8px;
+    list-style      : none;
+    padding         : 0;
+}
+
+@mixin tag-list-item($color : var(--primary-700, #6941C6), $background : var(--base-white, #FFF), $size : 12px, $weight: 500) {
+    display         : block;
+    padding         : 4px 8px;
+    border-radius   : 16px;
+    background      : $background;
+    color           : $color;
+    text-align      : center;
+    font-size       : $size;
+    font-style      : normal;
+    font-weight     : $weight;
+    line-height     : 130%;
+    text-decoration : none;
+    transition      : color .3s var(--easing), background-color .3s var(--easing);
+}
+
+@mixin tag-list-item-hover($color : var(--primary-800, #6941C6), $background : var(--gray-50, #F9FAFB)) {
+    background : $background;
+    color      : $color;
+}
+
+
+@mixin display-2-xl-regular() {
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 80px;
+
+}
+@mixin display-2-xl-medium() {
+        font-size: 72px;
+        font-weight: 500;
+        line-height: 80px;
+}
+@mixin display-2-xl-semibold() {
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 80px;
+
+}
+@mixin display-2-xl-bold() {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 80px;
+}
+@mixin display-xl-regular() {
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 72px;
+
+}
+@mixin display-xl-medium() {
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 72px;
+
+}
+@mixin display-xl-semibold() {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 72px;
+
+}
+@mixin display-xl-bold() {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 72px;
+}
+    @mixin display-lg-regular() {
+        font-size: 36px;
+
+        font-weight: 400;
+
+        line-height: 42px;
+
+    }
+    @mixin display-lg-medium() {
+        font-size: 36px;
+
+        font-weight: 500;
+
+        line-height: 42px;
+
+    }
+    @mixin display-lg-semibold() {
+        font-size: 36px;
+
+        font-weight: 600;
+
+        line-height: 42px;
+
+    }
+    @mixin display-lg-bold() {
+        font-size: 36px;
+
+        font-weight: 700;
+
+        line-height: 42px;
+
+    }
+    @mixin display-md-regular() {
+        font-size: 28px;
+
+        font-weight: 400;
+
+        line-height: 40px;
+
+    }
+    @mixin display-md-medium() {
+        font-size: 28px;
+
+        font-weight: 500;
+
+        line-height: 40px;
+
+    }
+    @mixin display-md-semibold() {
+        font-size: 28px;
+
+        font-weight: 600;
+
+        line-height: 40px;
+
+    }
+    @mixin display-md-bold() {
+        font-size: 28px;
+
+        font-weight: 700;
+
+        line-height: 40px;
+
+    }
+    @mixin display-sm-regular() {
+        font-size: 24px;
+
+        font-weight: 400;
+
+        line-height: 32px;
+
+    }
+    @mixin display-sm-medium() {
+        font-size: 24px;
+
+        font-weight: 500;
+
+        line-height: 32px;
+
+    }
+    @mixin display-sm-semibold() {
+        font-size: 24px;
+
+        font-weight: 600;
+
+        line-height: 32px;
+
+    }
+    @mixin display-sm-bold() {
+        font-size: 24px;
+
+        font-weight: 700;
+
+        line-height: 32px;
+
+    }
+    @mixin text-xl-regular() {
+        font-size: 20px;
+
+        font-weight: 400;
+
+        line-height: 28px;
+
+    }
+    @mixin text-xl-medium() {
+        font-size: 20px;
+
+        font-weight: 500;
+
+        line-height: 28px;
+
+    }
+    @mixin text-xl-semibold() {
+        font-size: 20px;
+
+        font-weight: 600;
+
+        line-height: 28px;
+
+    }
+    @mixin text-xl-bold() {
+        font-size: 20px;
+
+        font-weight: 700;
+
+        line-height: 28px;
+
+    }
+    @mixin text-lg-regular() {
+        font-size: 18px;
+
+        font-weight: 400;
+
+        line-height: 26px;
+
+    }
+    @mixin text-lg-medium() {
+        font-size: 18px;
+
+        font-weight: 500;
+
+        line-height: 26px;
+
+    }
+    @mixin text-lg-semibold() {
+        font-size: 18px;
+
+        font-weight: 600;
+
+        line-height: 26px;
+
+    }
+    @mixin text-lg-bold() {
+        font-size: 18px;
+
+        font-weight: 700;
+
+        line-height: 26px;
+
+    }
+    @mixin text-md-regular() {
+        font-size: 16px;
+
+        font-weight: 400;
+
+        line-height: 24px;
+
+    }
+    @mixin text-md-medium() {
+        font-size: 16px;
+
+        font-weight: 500;
+
+        line-height: 24px;
+
+    }
+    @mixin text-md-semibold() {
+        font-size: 16px;
+
+        font-weight: 600;
+
+        line-height: 24px;
+
+    }
+    @mixin text-md-bold() {
+        font-size: 16px;
+
+        font-weight: 700;
+
+        line-height: 24px;
+
+    }
+    @mixin text-sm-regular() {
+        font-size: 14px;
+
+        font-weight: 400;
+
+        line-height: 22px;
+
+    }
+    @mixin text-sm-medium() {
+        font-size: 14px;
+
+        font-weight: 500;
+
+        line-height: 22px;
+
+    }
+    @mixin text-sm-semibold() {
+        font-size: 14px;
+
+        font-weight: 600;
+
+        line-height: 22px;
+
+    }
+    @mixin text-sm-bold() {
+        font-size: 14px;
+
+        font-weight: 700;
+
+        line-height: 22px;
+
+    }
+    @mixin text-xs-regular() {
+        font-size: 12px;
+
+        font-weight: 400;
+
+        line-height: 18px;
+
+    }
+    @mixin text-xs-medium() {
+        font-size: 12px;
+
+        font-weight: 500;
+
+        line-height: 18px;
+
+    }
+    @mixin text-xs-semibold() {
+        font-size: 12px;
+
+        font-weight: 600;
+
+        line-height: 18px;
+
+    }
+    @mixin text-xs-bold() {
+        font-size: 12px;
+
+        font-weight: 700;
+
+        line-height: 18px;
+
+    }

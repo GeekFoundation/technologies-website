@@ -1,0 +1,52 @@
+.category-list-modern {
+	display               : grid;
+	gap                   : 24px;
+	grid-template-columns : repeat(2, 1fr);
+	@media screen and (min-width : $break-table) {
+		gap : 44px;
+	}
+	@media screen and (min-width : $break-desktop) {
+		gap : 95px;
+	}
+}
+
+.category-list-modern__cell {
+	box-sizing                              : border-box;
+	max-width                               : 484px;
+	--woocommerce-category-image-min-height : 200px;
+	--woocommerce-category-image-max-height : 505px;
+	--woocommerce-category-image-background : var(--gray-25);
+
+	.header-section__description {
+		max-width : 455px;
+	}
+
+	.woocommerce-loop-category__box {
+		align-items : flex-start;
+		height      : auto;
+	}
+
+	.woocommerce-loop-category__title {
+		margin-top : 0;
+	}
+
+	@media screen and (min-width : $break-desktop) {
+		&:nth-child(1) {
+			padding-top : 10%;
+		}
+
+		&:nth-child(2) {
+			padding-right                           : 15%;
+			--woocommerce-category-image-max-height : 365px;
+		}
+
+		&:nth-child(3) {
+			margin-top : -15%;
+		}
+
+		&:nth-child(4) {
+			margin-top : 5%;
+		}
+	}
+
+}

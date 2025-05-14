@@ -1,0 +1,108 @@
+.page-builder {
+    @media screen and (max-width : $break-desktop-max) {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+.wrapper {
+	box-sizing    : border-box;
+    width         : 100%;
+	max-width     : var(--body-wrapper);
+	margin-right  : auto;
+	margin-left   : auto;
+	padding-right : var(--body-wrapper-padding-mobile);
+	padding-left  : var(--body-wrapper-padding-mobile);
+    position : relative;
+	@media screen and (min-width : $break-table) {
+		padding-right : var(--body-wrapper-padding-tablet);
+		padding-left  : var(--body-wrapper-padding-tablet);
+	}
+	@media screen and (min-width : $break-desktop) {
+		padding-right : var(--body-wrapper-padding-desktop);
+		padding-left  : var(--body-wrapper-padding-desktop);
+	}
+}
+.image-for-light {
+    display: none;
+}
+
+.body--page {
+    @media screen and (min-width : $break-table) {
+        .header__nav,
+        .header__scroll {
+            display: none;
+        }
+    }
+    @media screen and (min-width : $break-desktop) {
+        .header__theme {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .header__buttons {
+            margin-left: 88px;
+        }
+    }
+}
+
+.body--frontpage .main-menu__item:first-child {
+    display: none;
+}
+
+.body--page {
+    .main-menu__item {
+        display: none;
+
+        &:first-child,
+        &:last-child {
+            display: block;
+        }
+    }
+}
+
+html[dir="rtl"] {
+    .hero__desc-icon {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .offer-block__icon {
+        right: auto;
+        left: -1px;
+        transform: rotate(-90deg);
+    }
+    .feedback__icon {
+        margin-right: auto;
+    }
+    .feedback__form .b-btn {
+        margin-right: auto;
+    }
+    .modal__close {
+        right: auto;
+        left: 20px;
+    }
+
+    .section__name {
+        right: auto;
+        left: 20px;
+    }
+    @media screen and (min-width : $break-table) {
+        .feedback__icon {
+            right: auto;
+            left: 32px;
+            top: 25px;
+        }
+    }
+}
+
+body {
+    @media screen and (max-width : $break-desktop-max) {
+        &.is-hidden {
+            position : fixed;
+            height   : 100%;
+            overflow : hidden;
+        }
+    }
+}

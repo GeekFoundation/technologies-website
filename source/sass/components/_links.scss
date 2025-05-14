@@ -1,0 +1,66 @@
+
+.link {
+    display: inline-block;
+    position: relative;
+    color: inherit;
+
+    &--anim {
+        overflow: hidden;
+        text-align: right;
+        color: var(--violet-500);
+        span {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        svg {
+            stroke: var(--violet-500);
+            transition: color 0.3s;
+        }
+        &:before {
+            content: attr(data-content);
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            color: var(--violet-400, #6E56D5);
+            transition: transform 0.3s;
+            display: block;
+            text-align: right;
+        }
+        &:hover {
+            span,
+            &:before {
+                transform: translateY(-100%);
+            }
+            svg {
+                stroke: var(--violet-400, #6E56D5);
+            }
+        }
+    }
+
+    &--back {
+        border-radius: 80px;
+        border: 1px solid var(--base-white-10, rgba(255, 255, 255, 0.10));
+        background: var(--base-white-10, rgba(255, 255, 255, 0.10));
+        padding: 4px 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        @include text-xs-medium;
+        color: var(--violet-200, #CDCFF8);
+
+        svg {
+            transition: transform 0.3s;
+        }
+
+        &:hover {
+            color: var(--violet-200, #CDCFF8);
+
+            svg {
+                transform: translateX(-3px);
+            }
+        }
+
+
+    }
+}

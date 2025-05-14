@@ -1,0 +1,178 @@
+<div class="modal" id="development" >
+    <div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
+        <div role="dialog" class="modal__container" aria-modal="true">
+            <div class="modal__content">
+                <button class="modal__close" data-modal-close="development">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="modal__part">
+                    <div class="modal__part-top">
+                        <div class="modal__title">
+                            {{ dev.title }}
+                        </div>
+                        <div class="modal__desc">
+                            <div class="modal__desc-title">
+                                {{ dev.subtitle }}
+                            </div>
+                            <div class="modal__text">{{ dev.text }}</div>
+                        </div>
+                    </div>
+                    <div class="modal__subtitle">{{ dev.listTitle }}</div>
+                    <div class="modal__list">
+                        {% include "../../components/modal-block.twig" with {
+                            list: [
+                                {
+                                    title: dev.list[0].title,
+                                    text: choose.list[0].text,
+                                },
+                                {
+                                    title: dev.list[1].title,
+                                    text: choose.list[1].text,
+                                },
+                                {
+                                    title: dev.list[2].title,
+                                    text: choose.list[2].text,
+                                },
+                                {
+                                    title: dev.list[3].title,
+                                    text: choose.list[3].text,
+                                },
+                            ]
+                        } only %}
+                    </div>
+                    <div class="modal__unit">
+                        <div class="modal__data">
+                            <h4 class="modal__unit-name">{{ dev.blockTitle }}</h4>
+                            <div class="modal__unit-text">{{ dev.blockText }}</div>
+                        </div>
+                        <a href="#" class="b-btn b-btn--primary">
+                            <span>{{ dev.btn }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__bg" aria-hidden="true" data-modal-close="development"></div>
+    </div>
+</div>
+
+<div class="modal" id="audits" >
+    <div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
+        <div role="dialog" class="modal__container" aria-modal="true">
+            <div class="modal__content">
+                <button class="modal__close" data-modal-close="audits">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="modal__part">
+                    <div class="modal__part-top">
+                        <div class="modal__title">
+                            {{ audits.title }}
+                        </div>
+                        <div class="modal__desc">
+                            <div class="modal__desc-title">
+                                {{ audits.subtitle }}
+                            </div>
+                            <div class="modal__text">{{ audits.text }}</div>
+                        </div>
+                    </div>
+                    <div class="modal__subtitle">{{ audits.listTitle }}</div>
+                    <div class="modal__list">
+                        {% include "../../components/modal-block.twig" with {
+                            list: [
+                                {
+                                    title: audits.list[0].title,
+                                    text: choose.list[0].text,
+                                },
+                                {
+                                    title: audits.list[1].title,
+                                    text: choose.list[1].text,
+                                },
+                                {
+                                    title: audits.list[2].title,
+                                    text: choose.list[2].text,
+                                },
+                                {
+                                    title: audits.list[3].title,
+                                    text: choose.list[3].text,
+                                },
+                            ]
+                        } only %}
+                    </div>
+                    <div class="modal__unit">
+                        <div class="modal__data">
+                            <h4 class="modal__unit-name">{{ audits.blockTitle }}</h4>
+                            <div class="modal__unit-text">{{ audits.blockText }}</div>
+                        </div>
+                        <a href="#" class="b-btn b-btn--primary">
+                            <span>{{ audits.btn }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__bg" aria-hidden="true" data-modal-close="audits"></div>
+    </div>
+</div>
+
+
+<div class="modal" id="consultancy" >
+    <div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
+        <div role="dialog" class="modal__container" aria-modal="true">
+            <div class="modal__content">
+                <button class="modal__close" data-modal-close="consultancy">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="modal__part">
+                    <div class="modal__part-top">
+                        <div class="modal__title">
+                            {{ consultancy.title }}
+                        </div>
+                        <div class="modal__desc">
+                            <div class="modal__desc-title">
+                                {{ consultancy.subtitle }}
+                            </div>
+                            <div class="modal__text">{{ consultancy.text }}</div>
+                        </div>
+                    </div>
+                    <div class="modal__subtitle">{{ consultancy.listTitle }}</div>
+                    <div class="modal__list">
+                        {% include "../../components/modal-block.twig" with {
+                            list: [
+                                {
+                                    title: consultancy.list[0].title,
+                                    text: choose.list[0].text,
+                                },
+                                {
+                                    title: consultancy.list[1].title,
+                                    text: choose.list[1].text,
+                                },
+                                {
+                                    title: consultancy.list[2].title,
+                                    text: choose.list[2].text,
+                                }
+                            ]
+                        } only %}
+                    </div>
+                    <div class="modal__unit">
+                        <div class="modal__data">
+                            <h4 class="modal__unit-name">{{ consultancy.blockTitle }}</h4>
+                            <div class="modal__unit-text">{{ consultancy.blockText }}</div>
+                        </div>
+                        <a href="#" class="b-btn b-btn--primary">
+                            <span>{{ consultancy.btn }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__bg" aria-hidden="true" data-modal-close="consultancy"></div>
+    </div>
+</div>
+
+

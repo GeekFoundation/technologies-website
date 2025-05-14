@@ -1,0 +1,34 @@
+@at-root {
+	:root {
+		--swiper-theme-color                        : var(--gray-900);
+		--swiper-preloader-color                    : var(--primary-800);
+		--swiper-wrapper-transition-timing-function : linear;
+		--swiper-pagination-color                   : var(--base-white);
+		--swiper-pagination-background              : var(--gray-900);
+		--swiper-pagination-radius                  : 12px;
+		--swiper-pagination-padding                 : 0 5px;
+		--swiper-pagination-size                    : 24px;
+		--swiper-pagination-fraction-color          : inherit;
+		--swiper-pagination-progressbar-bg-color    : rgba(0, 0, 0, 0.25);
+		--swiper-pagination-progressbar-size        : 4px;
+		--swiper-pagination-bullet-margin           : 24px 0 0;
+		--swiper-pagination-bullet-background       : 8px;
+		--swiper-pagination-bullet-size             : 8px;
+		--swiper-pagination-bullet-width            : 6px;
+		--swiper-pagination-bullet-height           : 6px;
+		--swiper-pagination-bullet-border-radius    : 50%;
+		--swiper-pagination-bullet-inactive-color   : var(--base-white);
+		--swiper-pagination-bullet-inactive-opacity : 0.4;
+		--swiper-pagination-bullet-opacity          : 1;
+		--swiper-pagination-bullet-horizontal-gap   : 4px;
+		--swiper-pagination-bullet-vertical-gap     : 6px;
+		--swiper-gap                                : 12px;
+	}
+}
+
+@import "swiper/core";
+@import "swiper/arrow";
+@import "swiper/pagination";
+@import "swiper/preload";
+@import "swiper/animation-fade";
+@import "swiper/thumbs";

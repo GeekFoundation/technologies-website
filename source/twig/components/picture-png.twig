@@ -1,0 +1,23 @@
+<picture>
+    {% if imgDesktop %}
+        <source media="(min-width: 1081px)" srcset="{{ imgDesktop }}.webp 1x, {{ imgDesktop }}@2x.webp 1.3x"
+                type="image/webp">
+        <source media="(min-width: 1081px)" srcset="{{ imgDesktop }}.png 1x, {{ imgDesktop }}@2x.png 1.3x"
+                type="image/png">
+    {% endif %}
+
+    {% if imgTablet %}
+        <source media="(min-width: 681px)" srcset="{{ imgTablet }}.webp 1x, {{ imgTablet }}@2x.webp 1.3x"
+                type="image/webp">
+        <source media="(min-width: 681px)" srcset="{{ imgTablet }}.png 1x, {{ imgTablet }}@2x.png 1.3x"
+                type="image/png">
+    {% endif %}
+    <source srcset="{{ img }}.webp 1x, {{ img }}@2x.webp 1.3x" type="image/webp">
+    <source srcset="{{ img }}.png 1x, {{ img }}@2x.png 1.3x" type="image/png">
+
+    {% if start %}
+        <img src="{{ img }}.png" width="{{ w }}" height="{{ h }}" loading="eager"  alt="image">
+    {% else %}
+        <img src="{{ img }}.png" loading="lazy" decoding="async" alt="" width="{{ w }}" height="{{ h }}">
+    {% endif %}
+</picture>
