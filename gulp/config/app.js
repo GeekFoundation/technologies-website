@@ -138,8 +138,12 @@ const app = {
 		base  : `${src}/twig/pages/`,
 		// Watch this folder
 		watch : [
-			`${src}/twig/pages/**/*.{twig,htm}`, `${src}/twig/partial/*.{twig,htm}`, `${src}/twig/partial/**/*.{twig,htm}`,
-			`${src}/twig/template/**/*.{twig,htm}`, `${src}/twig/data/**/*.json`,
+			`${src}/twig/pages/**/*.{twig,htm}`,
+            `${src}/twig/partial/*.{twig,htm}`,
+            `${src}/twig/partial/**/*.{twig,htm}`,
+			`${src}/twig/template/**/*.{twig,htm}`,
+			`${src}/twig/components/**/*.{twig,htm}`,
+            `${src}/twig/data/**/*.json`,
 		],
 		// Unload on detection here
 		dest,
