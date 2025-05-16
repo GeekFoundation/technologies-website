@@ -36,6 +36,7 @@ export {
 	taskImages,
 	taskJs,
 	taskSass,
+    taskHtml,
 	taskSprite,
 	server,
 	dev,
