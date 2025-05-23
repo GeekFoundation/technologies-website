@@ -2,7 +2,6 @@
 <html dir="rtl" lang="ar">
 
 <head>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>الرئيسية</title>
@@ -13,7 +12,6 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
 	<link rel="manifest" href="favicon/site.webmanifest" />
 	<script>/*! @formatter:off modernizr 3.6.0 (Custom Build) | MIT https://modernizr.com/download/?-overflowscrolling-webp-setclasses !*/!function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,i,s,a;for(var l in _)if(_.hasOwnProperty(l)){if(e=[],n=_[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,i=0;i<e.length;i++)s=e[i],a=s.split("."),1===a.length?Modernizr[a[0]]=o:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=o),w.push((o?"":"no-")+a.join("-"))}}function i(e){var n=S.className,t=Modernizr._config.classPrefix||"";if(B&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),B?S.className.baseVal=n:S.className=n)}function s(e,n){if("object"==typeof e)for(var t in e)b(e,t)&&s(t,e[t]);else{e=e.toLowerCase();var r=e.split("."),o=Modernizr[r[0]];if(2==r.length&&(o=o[r[1]]),"undefined"!=typeof o)return Modernizr;n="function"==typeof n?n():n,1==r.length?Modernizr[r[0]]=n:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=n),i([(n&&0!=n?"":"no-")+r.join("-")]),Modernizr._trigger(e,n)}return Modernizr}function a(e,n){return!!~(""+e).indexOf(n)}function l(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):B?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function A(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function u(e,n){return function(){return e.apply(n,arguments)}}function f(e,n,t){var o;for(var i in e)if(e[i]in n)return t===!1?e[i]:(o=n[e[i]],r(o,"function")?u(o,t||n):o);return!1}function c(n,t,r){var o;if("getComputedStyle"in e){o=getComputedStyle.call(e,n,t);var i=e.console;if(null!==o)r&&(o=o.getPropertyValue(r));else if(i){var s=i.error?"error":"log";i[s].call(i,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else o=!t&&n.currentStyle&&n.currentStyle[r];return o}function p(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(){var e=n.body;return e||(e=l(B?"svg":"body"),e.fake=!0),e}function m(e,t,r,o){var i,s,a,A,u="modernizr",f=l("div"),c=d();if(parseInt(r,10))for(;r--;)a=l("div"),a.id=o?o[r]:u+(r+1),f.appendChild(a);return i=l("style"),i.type="text/css",i.id="s"+u,(c.fake?c:f).appendChild(i),c.appendChild(f),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(n.createTextNode(e)),f.id=u,c.fake&&(c.style.background="",c.style.overflow="hidden",A=S.style.overflow,S.style.overflow="hidden",S.appendChild(c)),s=t(f,e),c.fake?(c.parentNode.removeChild(c),S.style.overflow=A,S.offsetHeight):f.parentNode.removeChild(f),!!s}function g(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(p(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+p(n[o])+":"+r+")");return i=i.join(" or "),m("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==c(e,null,"position")})}return t}function h(e,n,o,i){function s(){f&&(delete U.style,delete U.modElem)}if(i=r(i,"undefined")?!1:i,!r(o,"undefined")){var u=g(e,o);if(!r(u,"undefined"))return u}for(var f,c,p,d,m,h=["modernizr","tspan","samp"];!U.style&&h.length;)f=!0,U.modElem=l(h.shift()),U.style=U.modElem.style;for(p=e.length,c=0;p>c;c++)if(d=e[c],m=U.style[d],a(d,"-")&&(d=A(d)),U.style[d]!==t){if(i||r(o,"undefined"))return s(),"pfx"==n?d:!0;try{U.style[d]=o}catch(v){}if(U.style[d]!=m)return s(),"pfx"==n?d:!0}return s(),!1}function v(e,n,t,o,i){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+x.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?h(a,n,o,i):(a=(e+" "+E.join(s+" ")+s).split(" "),f(a,n,t))}function y(e,n,r){return v(e,t,t,n,r)}var w=[],_=[],C={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){_.push({name:e,fn:n,options:t})},addAsyncTest:function(e){_.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=C,Modernizr=new Modernizr;var b,S=n.documentElement,B="svg"===S.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;b=r(e,"undefined")||r(e.call,"undefined")?function(e,n){return n in e&&r(e.constructor.prototype[n],"undefined")}:function(n,t){return e.call(n,t)}}(),C._l={},C.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},C._trigger=function(e,n){if(this._l[e]){var t=this._l[e];setTimeout(function(){var e,r;for(e=0;e<t.length;e++)(r=t[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){C.addTest=s}),Modernizr.addAsyncTest(function(){function e(e,n,t){function r(n){var r=n&&"load"===n.type?1==o.width:!1,i="webp"===e;s(e,i&&r?new Boolean(r):r),t&&t(n)}var o=new Image;o.onerror=r,o.onload=r,o.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],t=n.shift();e(t.name,t.uri,function(t){if(t&&"load"===t.type)for(var r=0;r<n.length;r++)e(n[r].name,n[r].uri)})});var Q="Moz O ms Webkit",x=C._config.usePrefixes?Q.split(" "):[];C._cssomPrefixes=x;var E=C._config.usePrefixes?Q.toLowerCase().split(" "):[];C._domPrefixes=E;var T={elem:l("modernizr")};Modernizr._q.push(function(){delete T.elem});var U={style:T.elem.style};Modernizr._q.unshift(function(){delete U.style}),C.testAllProps=v,C.testAllProps=y,Modernizr.addTest("overflowscrolling",y("overflowScrolling","touch",!0)),o(),i(w),delete C.addTest,delete C.addAsyncTest;for(var P=0;P<Modernizr._q.length;P++)Modernizr._q[P]();e.Modernizr=Modernizr}(window,document);/*! @formatter:on */</script>
-
 </head>
 
 <body>
@@ -67,8 +65,6 @@
 				</div>
 			</div>
 		</header>
-
-
 		<section class="hero section">
 			<div class="wrapper">
 				<div class="hero__part">
@@ -94,16 +90,11 @@
 						<div class="hero__picture">
 							<picture>
 
-
-
 								<source srcset="images/hero/hero.webp 1x, images/hero/hero@2x.webp 1.3x" type="image/webp">
 								<source srcset="images/hero/hero.jpg 1x, images/hero/hero@2x.jpg 1.3x" type="image/jpg">
 
-
 								<img src="images/hero/hero.jpg" width="705" height="900" loading="eager" alt="image">
-
 							</picture>
-
 						</div>
 						<a href="#" class="b-btn b-btn--secondary hero__btn">
 							<span>قراءة المزيد</span>
@@ -112,7 +103,6 @@
 				</div>
 			</div>
 		</section>
-
 		<section class="about section" id="about">
 			<div class="wrapper">
 				<div class="section__name">أخبرنا عن أنفسنا — 01</div>
@@ -128,27 +118,20 @@
 					<div class="about__picture" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
 						<picture>
 
-
-
 							<source srcset="images/hero/about.webp 1x, images/hero/about@2x.webp 1.3x" type="image/webp">
 							<source srcset="images/hero/about.png 1x, images/hero/about@2x.png 1.3x" type="image/png">
 
-
 							<img src="images/hero/about.png" loading="lazy" decoding="async" alt="" width="683" height="559">
-
 						</picture>
-
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<section class="section offer" id="services" data-panels="wrapper">
 			<div class="wrapper">
 				<div class="section__name">الخدمات — 02</div>
 				<h2 class="section__title">ما نقدمه</h2>
 				<div class="offer__list">
-
 					<div class="offer__item" data-panels="section">
 						<div class="offer-block " data-modal-open="development" data-panels="item">
 							<div class="offer-block__icon">
@@ -170,20 +153,14 @@
 							<div class="offer-block__picture">
 								<picture>
 
-
-
 									<source srcset="images/hero/step-1.webp 1x, images/hero/step-1@2x.webp 1.3x" type="image/webp">
 									<source srcset="images/hero/step-1.png 1x, images/hero/step-1@2x.png 1.3x" type="image/png">
 
-
 									<img src="images/hero/step-1.png" loading="lazy" decoding="async" alt="" width="396" height="256">
-
 								</picture>
-
 							</div>
 						</div>
 					</div>
-
 					<div class="offer__item" data-panels="section">
 						<div class="offer-block offer-block--gray" data-modal-open="audits" data-panels="item">
 							<div class="offer-block__icon">
@@ -205,20 +182,14 @@
 							<div class="offer-block__picture">
 								<picture>
 
-
-
 									<source srcset="images/hero/step-2.webp 1x, images/hero/step-2@2x.webp 1.3x" type="image/webp">
 									<source srcset="images/hero/step-2.png 1x, images/hero/step-2@2x.png 1.3x" type="image/png">
 
-
 									<img src="images/hero/step-2.png" loading="lazy" decoding="async" alt="" width="396" height="256">
-
 								</picture>
-
 							</div>
 						</div>
 					</div>
-
 					<div class="offer__item" data-panels="section">
 						<div class="offer-block offer-block--gray-more" data-modal-open="consultancy" data-panels="item">
 							<div class="offer-block__icon">
@@ -240,25 +211,17 @@
 							<div class="offer-block__picture">
 								<picture>
 
-
-
 									<source srcset="images/hero/step-3.webp 1x, images/hero/step-3@2x.webp 1.3x" type="image/webp">
 									<source srcset="images/hero/step-3.png 1x, images/hero/step-3@2x.png 1.3x" type="image/png">
 
-
 									<img src="images/hero/step-3.png" loading="lazy" decoding="async" alt="" width="396" height="256">
-
 								</picture>
-
 							</div>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</section>
-
 		<section class="section choose">
 			<div class="wrapper">
 				<div class="choose__part">
@@ -266,7 +229,6 @@
 						<div class="section__name">لماذا نحن — 03</div>
 						<h2 class="section__title">لماذا تختارنا؟</h2>
 						<div class="choose__list">
-
 							<div class="choose-block">
 								<div class="choose-block__icon">
 									<img src="images/icons/icon-1.svg" width="28" height="28" loading="lazy" alt="">
@@ -276,7 +238,6 @@
 									<div class="choose-block__text">يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="choose-block">
 								<div class="choose-block__icon">
 									<img src="images/icons/icon-2.svg" width="28" height="28" loading="lazy" alt="">
@@ -286,7 +247,6 @@
 									<div class="choose-block__text">حلول مخصصة: يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="choose-block">
 								<div class="choose-block__icon">
 									<img src="images/icons/icon-3.svg" width="28" height="28" loading="lazy" alt="">
@@ -296,7 +256,6 @@
 									<div class="choose-block__text">نحن نتجاوز حل المشكلات المعزولة لتقديم حلول شاملة تؤدي إلى قيمة دائمة.</div>
 								</div>
 							</div>
-
 							<div class="choose-block">
 								<div class="choose-block__icon">
 									<img src="images/icons/icon-4.svg" width="28" height="28" loading="lazy" alt="">
@@ -306,28 +265,20 @@
 									<div class="choose-block__text">نحن نفخر بالتزامنا بأعلى معايير الصناعة وتجاوز توقعات العملاء.</div>
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 					<div class="choose__picture" data-scroll-animate='{"opacity": 0, "y": 50, "duration": 1}'>
 						<picture>
 
-
-
 							<source srcset="images/hero/choose.webp 1x, images/hero/choose@2x.webp 1.3x" type="image/webp">
 							<source srcset="images/hero/choose.jpg 1x, images/hero/choose@2x.jpg 1.3x" type="image/jpg">
 
-
 							<img src="images/hero/choose.jpg" loading="lazy" decoding="async" alt="" width=670 height=616>
-
 						</picture>
-
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<section class="feedback section" id="contact">
 			<div class="wrapper">
 				<div class="feedback__part">
@@ -374,8 +325,6 @@
 				</div>
 			</div>
 		</section>
-
-
 		<footer class="footer">
 			<div class="wrapper">
 				<div class="footer__line">
@@ -389,7 +338,6 @@
 				</div>
 			</div>
 		</footer>
-
 	</div>
 	<div class="modal" id="development">
 		<div tabindex="-1" class="modal__overlay modal__overlay--dark" data-micromodal-close>
@@ -414,7 +362,6 @@
 						</div>
 						<div class="modal__subtitle">الخدمات الأساسية</div>
 						<div class="modal__list">
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -426,7 +373,6 @@
 									<div class="modal-block__text">يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -438,7 +384,6 @@
 									<div class="modal-block__text">حلول مخصصة: يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -450,7 +395,6 @@
 									<div class="modal-block__text">نحن نتجاوز حل المشكلات المعزولة لتقديم حلول شاملة تؤدي إلى قيمة دائمة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -462,8 +406,6 @@
 									<div class="modal-block__text">نحن نفخر بالتزامنا بأعلى معايير الصناعة وتجاوز توقعات العملاء.</div>
 								</div>
 							</div>
-
-
 						</div>
 						<div class="modal__unit">
 							<div class="modal__data">
@@ -504,7 +446,6 @@
 						</div>
 						<div class="modal__subtitle">خدمات التدقيق</div>
 						<div class="modal__list">
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -516,7 +457,6 @@
 									<div class="modal-block__text">يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -528,7 +468,6 @@
 									<div class="modal-block__text">حلول مخصصة: يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -540,7 +479,6 @@
 									<div class="modal-block__text">نحن نتجاوز حل المشكلات المعزولة لتقديم حلول شاملة تؤدي إلى قيمة دائمة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -552,8 +490,6 @@
 									<div class="modal-block__text">نحن نفخر بالتزامنا بأعلى معايير الصناعة وتجاوز توقعات العملاء.</div>
 								</div>
 							</div>
-
-
 						</div>
 						<div class="modal__unit">
 							<div class="modal__data">
@@ -595,7 +531,6 @@
 						</div>
 						<div class="modal__subtitle">العروض الاستشارية</div>
 						<div class="modal__list">
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -607,7 +542,6 @@
 									<div class="modal-block__text">يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -619,7 +553,6 @@
 									<div class="modal-block__text">حلول مخصصة: يتم تخصيص كل خدمة نقدمها لتلبية احتياجات عملك المحددة.</div>
 								</div>
 							</div>
-
 							<div class="modal-block">
 								<div class="modal-block__icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -631,8 +564,6 @@
 									<div class="modal-block__text">نحن نتجاوز حل المشكلات المعزولة لتقديم حلول شاملة تؤدي إلى قيمة دائمة.</div>
 								</div>
 							</div>
-
-
 						</div>
 						<div class="modal__unit">
 							<div class="modal__data">
@@ -652,9 +583,7 @@
 
 
 
-
 	<script src="js/app.min.js"></script>
-
 </body>
 
 </html>
