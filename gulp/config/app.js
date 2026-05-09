@@ -56,7 +56,7 @@ const app = {
 		},
 		font : {
 			fontTypes : {
-				Inter : 'sans-serif',
+				Cairo : 'sans-serif',
 			},
 			srcUrlToFilename : (url) => path.join('./assets/fonts', url),
 		},
@@ -139,16 +139,27 @@ const app = {
 		// Watch this folder
 		watch : [
 			`${src}/twig/pages/**/*.{twig,htm}`,
-            `${src}/twig/partial/*.{twig,htm}`,
-            `${src}/twig/partial/**/*.{twig,htm}`,
+			`${src}/twig/partial/*.{twig,htm}`,
+			`${src}/twig/partial/**/*.{twig,htm}`,
 			`${src}/twig/template/**/*.{twig,htm}`,
 			`${src}/twig/components/**/*.{twig,htm}`,
-            `${src}/twig/data/**/*.json`,
+			`${src}/twig/data/**/*.json`,
 		],
 		// Unload on detection here
 		dest,
 		data : `${src}/twig/data/`,
 		map  : false,
+	},
+	// Config for building Fonts
+	fonts : {
+		src   : [`${src}/fonts/**/*.{woff,woff2,ttf,eot,svg}`],
+		base  : `${src}/fonts/`,
+		// Watch this folder
+		watch : [
+			`${src}/fonts/**/*.{woff,woff2,ttf,eot,svg}`,
+		],
+		// Unload on detection here
+		dest : `${dest}/fonts`,
 	},
 	// JavaScript build config
 	js : {
@@ -190,10 +201,17 @@ const {
 	js,
 	sass,
 	html,
+	fonts,
 	sprite,
 }   = app;
 
 export default app;
 export {
-	env, images, js, sass, sprite, html,
+	env,
+	images,
+	js,
+	sass,
+	sprite,
+	html,
+	fonts,
 };

@@ -9,7 +9,6 @@ import gulpSass      from 'gulp-sass';
 import sourcemaps    from 'gulp-sourcemaps';
 import postcss       from 'gulp-postcss';
 import prefixer      from 'autoprefixer';
-import fontpie       from 'postcss-fontpie';
 import gulpif        from 'gulp-if';
 import csso          from 'gulp-csso';
 import browserSync   from 'browser-sync';
@@ -21,7 +20,6 @@ const scss = gulpSass(dartSass);
 // Config for postcss
 const processors = [
 	prefixer(sass.prefix),
-	fontpie(sass.font),
 ];
 
 /**

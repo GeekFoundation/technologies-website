@@ -3,3 +3,5 @@
 /node_modules/
 /coverage
 *.zip
+/app/fonts/*
+!/app/fonts/.gitkeep
