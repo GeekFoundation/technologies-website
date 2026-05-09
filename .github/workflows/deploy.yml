@@ -1,0 +1,142 @@
+name: deploy
+
+# Rendered by scripts/github-setup.py from
+# roles/project-setup/templates/deploy.yml.j2 — do not edit by hand, next run
+# of `make github-setup <project>` will overwrite.
+
+
+# Runs directly on push to deployable branches (no CI gate — project has
+# no test workflow declared in ci.yml:test_workflow).
+on:
+  push:
+    branches:
+      - master
+
+
+concurrency:
+
+  group: deploy-${{ github.ref_name }}
+
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Trigger remote deploy
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Resolve target branch
+        id: env
+        run: |
+
+          BRANCH="${{ github.ref_name }}"
+
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Install per-branch SSH private key
+        env:
+          BRANCH: ${{ steps.env.outputs.branch }}
+          SSH_KEY_MASTER: ${{ secrets.DEPLOY_SSH_KEY_MASTER }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          case "$BRANCH" in
+            master) KEY="$SSH_KEY_MASTER" ;;
+            *)       echo "::error::unsupported branch: $BRANCH"; exit 1 ;;
+          esac
+          if [ -z "$KEY" ]; then
+            echo "::error::secret DEPLOY_SSH_KEY_$(echo "$BRANCH" | tr a-z A-Z) is empty or not set"
+            exit 1
+          fi
+          printf '%s\n' "$KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+      - name: Populate known_hosts (optional)
+        env:
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          if [ -n "${KNOWN_HOSTS:-}" ]; then
+            printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+            chmod 644 ~/.ssh/known_hosts
+          fi
+
+      - name: Trigger deploy via SSH forced-command
+        id: trigger
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_HOST:?DEPLOY_HOST secret is not set}"
+          : "${DEPLOY_USER:?DEPLOY_USER secret is not set}"
+          PORT="${DEPLOY_PORT:-22}"
+
+          SSH_OPTS=(-i ~/.ssh/deploy_key -T -p "$PORT"
+                    -o IdentitiesOnly=yes
+                    -o ConnectTimeout=15)
+          if [ -n "${DEPLOY_KNOWN_HOSTS:-}" ]; then
+            SSH_OPTS+=(-o StrictHostKeyChecking=yes
+                       -o UserKnownHostsFile=$HOME/.ssh/known_hosts)
+          else
+            SSH_OPTS+=(-o StrictHostKeyChecking=accept-new
+                       -o UserKnownHostsFile=/tmp/known_hosts)
+          fi
+
+          echo "Triggering deploy for branch ${{ steps.env.outputs.branch }}"
+          # tee captures stdout for later DEPLOY_RESULT extraction while still
+          # streaming to the action log.
+          ssh "${SSH_OPTS[@]}" "$DEPLOY_USER@$DEPLOY_HOST" | tee /tmp/deploy-stdout.log
+
+          # Extract the last DEPLOY_RESULT=<json> line; tolerate its absence.
+          RESULT=$(grep '^DEPLOY_RESULT=' /tmp/deploy-stdout.log | tail -n1 | sed 's/^DEPLOY_RESULT=//' || true)
+          if [ -n "$RESULT" ]; then
+            echo "result<<EOF"     >> "$GITHUB_OUTPUT"
+            echo "$RESULT"         >> "$GITHUB_OUTPUT"
+            echo "EOF"             >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: always()
+        env:
+          RESULT: ${{ steps.trigger.outputs.result }}
+          # Public IPFS gateway used to render `https://...` deep-links in the
+          # summary. Override via repo var if/when needed.
+          GATEWAY: ${{ vars.IPFS_GATEWAY || 'https://ipfs.geek.foundation' }}
+        run: |
+          set -euo pipefail
+          {
+            if [ -z "${RESULT:-}" ]; then
+              echo "### Deploy: \`${{ steps.env.outputs.branch }}\` — no DEPLOY_RESULT emitted"
+              exit 0
+            fi
+            host=$(     echo "$RESULT" | jq -r '.dnslink_host // "-"')
+            cid=$(      echo "$RESULT" | jq -r '.cid // "-"')
+            commit=$(   echo "$RESULT" | jq -r '.commit // "-"')
+            # .ipns.ipns_id отсутствует → IPNS не настроен (пустая строка после // empty)
+            ipns_id=$(  echo "$RESULT" | jq -r '.ipns.ipns_id // empty')
+            ipns_seq=$( echo "$RESULT" | jq -r '.ipns.seq // empty')
+            ipns_valid=$(echo "$RESULT" | jq -r '.ipns.validity // empty')
+
+            short_commit="${commit:0:8}"
+
+            echo "### 🚀 Deploy: \`$host\`"
+            echo ""
+            echo "**Live**: <https://$host/>"
+            echo ""
+            echo "| Item | Value |"
+            echo "|------|-------|"
+            echo "| Branch | \`${{ steps.env.outputs.branch }}\` |"
+            echo "| Commit | \`$short_commit\` |"
+            echo "| CID | [\`$cid\`]($GATEWAY/ipfs/$cid/) |"
+            if [ -n "$ipns_id" ]; then
+              echo "| IPNS | [\`$ipns_id\`]($GATEWAY/ipns/$ipns_id/) (seq \`$ipns_seq\`) |"
+              echo "| IPNS valid until | \`$ipns_valid\` |"
+            else
+              echo "| IPNS | _not configured_ |"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
