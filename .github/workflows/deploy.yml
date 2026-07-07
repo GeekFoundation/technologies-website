@@ -1,8 +1,8 @@
 name: deploy
 
 # Rendered by scripts/github-setup.py from
-# roles/project-setup/templates/deploy.yml.j2 — do not edit by hand, next run
-# of `make github-setup <project>` will overwrite.
+# roles/project-setup/templates/deploy-static-nobuild-ipfs.yml.j2 — do not
+# edit by hand, next run of `make github-setup <project>` will overwrite.
 
 
 # Runs directly on push to deployable branches (no CI gate — project has
@@ -122,7 +122,7 @@ jobs:
             ipns_seq=$( echo "$RESULT" | jq -r '.ipns.seq // empty')
             ipns_valid=$(echo "$RESULT" | jq -r '.ipns.validity // empty')
 
-            short_commit="${commit:0:8}"
+            short_commit="${commit:0:7}"
 
             echo "### 🚀 Deploy: \`$host\`"
             echo ""
